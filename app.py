@@ -44,7 +44,7 @@ def add_post():
         task = request.form.get("task")
         limit_task = request.form.get("limit_task")
         print(task)
-        conn = sqlite3.connect('task_list.db')
+        conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("INSERT into task values(null,?,?,?)",(task,limit_task,user_id))
         conn.commit()
@@ -56,7 +56,7 @@ def add_post():
 @app.route('/edit/<int:id>')
 def edit(id):
     if 'user_id' in session:
-        conn = sqlite3.connect('task_list.db')
+        conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("SELECT task ,limit_task FROM task WHERE id = ?",(id,))
         task = c.fetchone()
@@ -79,7 +79,7 @@ def update_task():
         task = request.form.get("task")
         task_id = request.form.get("task_id")
         print(task)
-        conn = sqlite3.connect('task_list.db')
+        conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE task set task = ? ,limit_task = ? where id = ?",(task,limit_task,task_id))
         conn.commit()
@@ -91,7 +91,7 @@ def update_task():
 @app.route('/del/<int:id>')
 def del_task(id):
     if 'user_id' in session:
-        conn = sqlite3.connect('task_list.db')
+        conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("DELETE  FROM task WHERE id = ?",(id,))
         conn.commit()
@@ -112,7 +112,7 @@ def regist_get():
 def regist_post():
     name = request.form.get("name")
     password = request.form.get("password")
-    conn = sqlite3.connect('task_list.db')
+    conn = sqlite3.connect('team3.db')
     c = conn.cursor()
     c.execute("INSERT into user values(null,?,?)",(name,password))
     conn.commit()
@@ -131,7 +131,7 @@ def login_get():
 def login_post():
     name = request.form.get("name")
     password = request.form.get("password")
-    conn = sqlite3.connect('task_list.db')
+    conn = sqlite3.connect('team3.db')
     c = conn.cursor()
     c.execute("SELECT id FROM user WHERE name = ? AND password = ?",(name,password))
     user_id = c.fetchone()
