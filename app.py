@@ -13,7 +13,7 @@ def helloWorld():
 
 
 @app.route("/list")
-def tasklist():
+def testlist():
     if 'user_id' in session:
         user_id = session['user_id']
         conn = sqlite3.connect('team3.db') #team3dbにコネクト
@@ -75,13 +75,15 @@ def edit(id):
 @app.route("/edit",methods=["POST"])
 def update_task():
     if 'user_id' in session:
-        limit_task = request.form.get("limit_task")
-        task = request.form.get("task")
-        task_id = request.form.get("task_id")
-        print(task)
+        name = request.form.get("name")
+        catchcopy = request.form.get("catchcopy")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+  
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("UPDATE task set task = ? ,limit_task = ? where id = ?",(task,limit_task,task_id))
+        c.execute("UPDATE art set name = ? ,category = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?, where id = ?",(name,category,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
