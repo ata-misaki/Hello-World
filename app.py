@@ -9,7 +9,7 @@ app.secret_key = 'sunabaco_yatsusiro'
 
 @app.route("/")
 def helloWorld():
-    return "Hello World."
+    return "こんにちは."
 
 
 @app.route("/list")
