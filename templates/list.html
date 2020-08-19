@@ -5,9 +5,12 @@
 <table border = "1">
     {% for item in task_list %}
     <tr>
-        <td>{{item["id"]}}</td>
-        <td>{{item["task"]}}</td>
-        <td>{{item["limit_task"]}}</td>
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
     </tr>
