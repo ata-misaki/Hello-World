@@ -16,7 +16,7 @@ def helloWorld():
 def tasklist():
     if 'user_id' in session:
         user_id = session['user_id']
-        conn = sqlite3.connect('task_list.db')
+        conn = sqlite3.connect('team3.db') #team3dbにコネクト
         c = conn.cursor()
         c.execute("SELECT name FROM user WHERE id = ?",(user_id,))
         user_name = c.fetchone()[0]
