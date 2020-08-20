@@ -73,12 +73,13 @@ header p {
     font-family: A-OTF 太ゴB101 Pr6N;
     margin: 15px;
 }
-.genre .title_text {
+.genre .title span{
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     font-family: A-OTF 太ゴB101 Pr6N;
     margin: 15px;
 }
+
 .genre .musicimage {
     width: 100%;
 }
