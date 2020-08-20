@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <title>Document</title> 
 </head>
 <body>
-    <!-- <p style="background-color: antiquewhite;">ヘッダー</p> -->
-    <p>ヘッダー!</p>
+    <header>
+        <p>Hello World</p>
+    </header>
     {% block content %}
 
 
@@ -16,7 +17,12 @@
 
 
     {% endblock %}
-    <!-- <p style="background-color: darkseagreen;">フッター</p> -->
-    <p>フッター</p>
+    <footer>
+        
+        <p>質問やお問い合わせは公式ツイッターまで！！</p>
+        <a href="#" class="twitter">Twitterフォローしてね！</a>   
+        
+    </footer>
+   
 </body>
 </html>
