@@ -21,12 +21,12 @@ def testlist():
         c.execute("SELECT name FROM user WHERE id = ?",(user_id,))
         user_name = c.fetchone()[0]
         c.execute("SELECT *  FROM task WHERE user_id = ?",(user_id,))
-        task_list = []
+        test_list = []
         for row in c.fetchall():
-            task_list.append({"id":row[0],"task":row[1],"limit_task":row[2]})
+            test_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2]},"name":row[3],"")
             print(task_list)
         c.close()
-        return render_template("task_list.html", task_list = task_list,user_name = user_name)
+        return render_template("list.html", task_list = task_list,user_name = user_name)
     else:
         return redirect("/login")
 
