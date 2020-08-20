@@ -18,15 +18,13 @@ def testlist():
         user_id = session['user_id']
         conn = sqlite3.connect('team3.db') #team3dbにコネクト
         c = conn.cursor()
-        c.execute("SELECT name FROM user WHERE id = ?",(user_id,))
-        user_name = c.fetchone()[0]
-        c.execute("SELECT *  FROM task WHERE user_id = ?",(user_id,))
+        c.execute("SELECT *  FROM art WHERE category_id = ?",(category_id,))
         test_list = []
         for row in c.fetchall():
-            test_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2]},"name":row[3],"")
-            print(task_list)
+            test_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})
+            print(test_list)
         c.close()
-        return render_template("list.html", task_list = task_list,user_name = user_name)
+        return render_template("list.html", category_id= category_id, catchcopy = catchcopy, name = name, image = image, keyword1 = keyword1, keyword2 = keyword2, keyword3 = keyword3 )
     else:
         return redirect("/login")
 

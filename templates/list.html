@@ -2,7 +2,48 @@
 {% block content %}
 <!-- ここから -->
 <p>{{user_name}}さん、こんにちは！</p>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
+<!-- 自然 -->
+<p>nature</p>
+<table border = "1">
+    {% for nature_item in team3 %}   
+    <tr>      
+        <td>{{nature_item["name"]}}</td>
+        <td>{{nature_item["category"]}}</td>
+        <td>{{nature_item["keyword1"]}}</td>
+        <td>{{nature_item["keyword2"]}}</td>
+        <td>{{nature_item["keyword3"]}}</td>
+        <td>{{nature_item["image"]}}</td>
+        <td><a href="/edit/{{nature_item['id']}}">編集</a></td>
+        <td><a href="/del/{{nature_item['id']}}">削除</a></td>
+        <td><a href="/add/{{nature_item['id']}}">追加</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- 音楽 -->
+<p>music</p>
+<table border = "1">
+    {% for music_item in team3 %}   
+    <tr>      
+        <td>{{music_item["name"]}}</td>
+        <td>{{music_item["category"]}}</td>
+        <td>{{music_item["keyword1"]}}</td>
+        <td>{{music_item["keyword2"]}}</td>
+        <td>{{music_item["keyword3"]}}</td>
+        <td>{{music_item["image"]}}</td>
+        <td><a href="/edit/{{music_item['id']}}">編集</a></td>
+        <td><a href="/del/{{music_item['id']}}">削除</a></td>
+        <td><a href="/add/{{music_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- アート -->
 <p>art</p>
 <table border = "1">
     {% for art_item in team3 %}   
@@ -15,29 +56,106 @@
         <td>{{art_item["image"]}}</td>
         <td><a href="/edit/{{art_item['id']}}">編集</a></td>
         <td><a href="/del/{{art_item['id']}}">削除</a></td>
+        <td><a href="/add/{{art_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
-<hr color="#008080" width="100%" size="3">
-
-<p>music</p>
+<!-- スポーツ -->
+<p>sport</p>
 <table border = "1">
-    {% for item in team3 %}   
+    {% for sport_item in team3 %}   
     <tr>      
-        <td>{{item["name"]}}</td>
-        <td>{{item["category"]}}</td>
-        <td>{{item["keyword1"]}}</td>
-        <td>{{item["keyword2"]}}</td>
-        <td>{{item["keyword3"]}}</td>
-        <td>{{item["image"]}}</td>
-        <td><a href="/edit/{{music_item['id']}}">編集</a></td>
-        <td><a href="/del/{{music_item['id']}}">削除</a></td>
+        <td>{{sport_item["name"]}}</td>
+        <td>{{sport_item["category"]}}</td>
+        <td>{{sport_item["keyword1"]}}</td>
+        <td>{{sport_item["keyword2"]}}</td>
+        <td>{{sport_item["keyword3"]}}</td>
+        <td>{{sport_item["image"]}}</td>
+        <td><a href="/edit/{{sport_item['id']}}">編集</a></td>
+        <td><a href="/del/{{sport_item['id']}}">削除</a></td>
+        <td><a href="/add/{{sport_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
-<hr color="#008080" width="100%" size="3">
+<!-- 旅 -->
+<p>trip</p>
+<table border = "1">
+    {% for trip_item in team3 %}   
+    <tr>      
+        <td>{{trip_item["name"]}}</td>
+        <td>{{trip_item["category"]}}</td>
+        <td>{{trip_item["keyword1"]}}</td>
+        <td>{{trip_item["keyword2"]}}</td>
+        <td>{{trip_item["keyword3"]}}</td>
+        <td>{{trip_item["image"]}}</td>
+        <td><a href="/edit/{{trip_item['id']}}">編集</a></td>
+        <td><a href="/del/{{trip_item['id']}}">削除</a></td>
+        <td><a href="/add/{{trip_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- fashion -->
+<p>fashion</p>
+<table border = "1">
+    {% for fashion_item in team3 %}   
+    <tr>      
+        <td>{{fashion_item["name"]}}</td>
+        <td>{{fashion_item["category"]}}</td>
+        <td>{{fashion_item["keyword1"]}}</td>
+        <td>{{fashion_item["keyword2"]}}</td>
+        <td>{{fashion_item["keyword3"]}}</td>
+        <td>{{fashion_item["image"]}}</td>
+        <td><a href="/edit/{{fashion_item['id']}}">編集</a></td>
+        <td><a href="/del/{{fashion_item['id']}}">削除</a></td>
+        <td><a href="/add/{{fashion_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- food -->
+<p>food</p>
+<table border = "1">
+    {% for food_item in team3 %}   
+    <tr>      
+        <td>{{food_item["name"]}}</td>
+        <td>{{food_item["category"]}}</td>
+        <td>{{food_item["keyword1"]}}</td>
+        <td>{{food_item["keyword2"]}}</td>
+        <td>{{food_item["keyword3"]}}</td>
+        <td>{{food_item["image"]}}</td>
+        <td><a href="/edit/{{food_item['id']}}">編集</a></td>
+        <td><a href="/del/{{food_item['id']}}">削除</a></td>
+        <td><a href="/add/{{food_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- life -->
+<p>life</p>
+<table border = "1">
+    {% for life_item in team3 %}   
+    <tr>      
+        <td>{{life_item["name"]}}</td>
+        <td>{{life_item["category"]}}</td>
+        <td>{{life_item["keyword1"]}}</td>
+        <td>{{life_item["keyword2"]}}</td>
+        <td>{{life_item["keyword3"]}}</td>
+        <td>{{life_item["image"]}}</td>
+        <td><a href="/edit/{{life_item['id']}}">編集</a></td>
+        <td><a href="/del/{{life_item['id']}}">削除</a></td>
+        <td><a href="/add/{{life_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
 <a href="/add">追加</a>
 <a href="/logout">ログアウト</a>
