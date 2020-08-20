@@ -95,7 +95,8 @@ def del_task(id):
     if 'user_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("DELETE  FROM task WHERE id = ?",(id,))
+        c.execute("DELETE FROM art WHERE id = ?",(id,))
+        c.execute("DELETE FROM music WHERE id = ?",(id,))
         conn.commit()
         conn.close()
         return redirect("/list")
