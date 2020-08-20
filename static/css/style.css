@@ -83,11 +83,11 @@ footer p {
     opacity: 1;
 }
 
-.fixed_word{
+h2 {
     text-align: left;
     font: normal normal bold 42px/84px A-OTF Futo Go B101 Pr6N;
     letter-spacing: 0px;
-    color: #61A6FF;
+    color:#61A6FF;
 
 }
 
@@ -100,23 +100,26 @@ footer p {
 }
 
 .top_return{
-    width: 600px;
-    height: 100px;
-    line-height: 100px;
-    background-color:#A61010;
-    box-shadow: 0 10px 0 #956566;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
     
 }
 
 .top_return:active {
-    top: 2px;
-      box-shadow: 0 2px 0 #0078BD;
+    /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
   }
-  .top_return:hover {
-    background-color: #1397D8;
-  }
+
 
 
 .google_link {
-    color:red;
+    color:#DB1C29;
 }
