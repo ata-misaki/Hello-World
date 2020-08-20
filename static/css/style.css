@@ -6,7 +6,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
     
 
-/* ここから */
+/* index.htmlここから */
 header {
     width: auto;
     height: 140px;
@@ -20,15 +20,94 @@ header p {
     margin: 0px;
     padding: 30px;
 }
+/* index.htmlここまで */
 
 /* index */
-.top_image {
-    background-color:;
-
+/* topimage */
+.container {
+    background-color: #010103;
+}
+.top_image{
+    position: relative;
+}
+.top_image .large {
+    position: absolute;
+    color: white;
+    top: 15%;
+    left: 50%;
+    font-size: 70px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    transform: translate(-50%,-50%);
+}
+.top_image .small {
+    position: absolute;
+    color: white;
+    top: 30%;
+    left: 50%;
+    font-size: 60px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    transform: translate(-50%,-50%);
+}
+.image1 {
+    width: 100%;
+    object-fit: cover;
+}
+/* ジャンル */
+.genre_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.genre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+} 
+.genre .title {
+    color: white;
+    font-size: 50px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    margin: 15px;
+}
+.genre .title_text {
+    color: white;
+    font-size: 40px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    margin: 15px;
+}
+.genre .musicimage {
+    width: 100%;
+}
+.genre .linkbtn {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #A61010;
+    box-shadow: 0 5px 0 #FEACAC;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    margin: 30px 0 50px 0;    
+}
+.linkbtn:active {
+    top: 2px;
+      box-shadow: 0 2px 0 #FEACAC;
+}
+.space {
+    height: 100px;
 }
 
 
 
+/* base.htmlここから */
 footer {
     display: flex;
     justify-content: center;
@@ -72,3 +151,4 @@ footer p {
   }
   .twitter:hover {
     background-color: #1397D8;
+    /* base.htmlここまで */
