@@ -149,6 +149,10 @@ def logout():
     session.pop('user_id',None)
     return redirect("login")
 
+@app.route("/contents")
+def contents():
+    return render_template("contents.html")
+
 @app.errorhandler(404)
 def not_found(code):
     return "ページないですよ"
