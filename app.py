@@ -14,8 +14,8 @@ def helloWorld():
 
 @app.route("/list")
 def testlist():
-    if 'user_id' in session:
-        user_id = session['user_id']
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
         conn = sqlite3.connect('team3.db') #team3dbにコネクト
         c = conn.cursor()
         c.execute("SELECT *  FROM art WHERE category_id = ?",(category_id,))
@@ -30,21 +30,21 @@ def testlist():
 
 @app.route("/add", methods = ["GET"])
 def add_get():
-    if 'user_id' in session:
+    if 'manager_id' in session:
         return render_template("add.html")
     else:
         return redirect("/login")
 
 @app.route("/add", methods = ["POST"])
 def add_post():
-    if 'user_id' in session:
-        user_id = session['user_id']
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
         task = request.form.get("task")
         limit_task = request.form.get("limit_task")
         print(task)
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into task values(null,?,?,?)",(task,limit_task,user_id))
+        c.execute("INSERT into task values(null,?,?,?)",(task,limit_task,manager_id))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -53,7 +53,7 @@ def add_post():
 
 @app.route('/edit/<int:id>')
 def edit(id):
-    if 'user_id' in session:
+    if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("SELECT task ,limit_task FROM task WHERE id = ?",(id,))
@@ -72,7 +72,7 @@ def edit(id):
 
 @app.route("/edit",methods=["POST"])
 def update_task():
-    if 'user_id' in session:
+    if 'manager_id' in session:
         name = request.form.get("name")
         catchcopy = request.form.get("catchcopy")
         keyword1 = request.form.get("keyword1")
@@ -90,7 +90,7 @@ def update_task():
 
 @app.route('/del/<int:id>')
 def del_task(id):
-    if 'user_id' in session:
+    if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("DELETE FROM art WHERE id = ?",(id,))
@@ -111,7 +111,7 @@ def regist_get():
 
 @app.route("/regist", methods = ["POST"])
 def regist_post():
-    name = request.form.get("name")
+    maneger = request.form.get("name")
     password = request.form.get("password")
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
@@ -122,7 +122,7 @@ def regist_post():
 
 @app.route("/login")
 def login_get():
-    if 'user_id' in session:
+    if 'manager_id' in session:
         return redirect("/list")
     else:
         return render_template("login.html")
@@ -130,23 +130,23 @@ def login_get():
 
 @app.route("/login",methods=["POST"])
 def login_post():
-    name = request.form.get("name")
+    manager_id = request.form.get("manager_id")
     password = request.form.get("password")
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("SELECT id FROM user WHERE name = ? AND password = ?",(name,password))
-    user_id = c.fetchone()
-    print(user_id)
+    c.execute("SELECT id FROM manager WHERE manager_id = ? AND password = ?",(manager_id,password))
+    manager_id = c.fetchone()
+    print(manager_id)
     c.close()
-    if user_id is None:
+    if manager_id is None:
         return render_template("login.html")
     else:
-        session['user_id'] = user_id[0]
+        session['manager_id'] = manager_id[0]
     return redirect("/list")
 
 @app.route("/logout")
 def logout():
-    session.pop('user_id',None)
+    session.pop('manager_id',None)
     return redirect("login")
 
 @app.errorhandler(404)
