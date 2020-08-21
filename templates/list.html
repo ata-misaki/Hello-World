@@ -9,8 +9,9 @@
 <table border = "1">
     {% for nature_item in team3 %}   
     <tr>      
+        <td>{{nature_item["catchcopy"]}}</td>
         <td>{{nature_item["name"]}}</td>
-        <td>{{nature_item["category"]}}</td>
+        <td>{{nature_item["category_id"]}}</td>
         <td>{{nature_item["keyword1"]}}</td>
         <td>{{nature_item["keyword2"]}}</td>
         <td>{{nature_item["keyword3"]}}</td>
@@ -28,9 +29,10 @@
 <p>music</p>
 <table border = "1">
     {% for music_item in team3 %}   
-    <tr>      
+    <tr> 
+        <td>{{music_item["catchcopy"]}}</td>
         <td>{{music_item["name"]}}</td>
-        <td>{{music_item["category"]}}</td>
+        <td>{{music_item["category_id"]}}</td>
         <td>{{music_item["keyword1"]}}</td>
         <td>{{music_item["keyword2"]}}</td>
         <td>{{music_item["keyword3"]}}</td>
@@ -47,7 +49,8 @@
 <p>art</p>
 <table border = "1">
     {% for art_item in team3 %}   
-    <tr>      
+    <tr> 
+        <td>{{art_item["catchcopy"]}}</td>  
         <td>{{art_item["name"]}}</td>
         <td>{{art_item["category"]}}</td>
         <td>{{art_item["keyword1"]}}</td>
@@ -66,7 +69,8 @@
 <p>sport</p>
 <table border = "1">
     {% for sport_item in team3 %}   
-    <tr>      
+    <tr> 
+        <td>{{sport_item["catchcopy"]}}</td>   
         <td>{{sport_item["name"]}}</td>
         <td>{{sport_item["category"]}}</td>
         <td>{{sport_item["keyword1"]}}</td>
@@ -86,6 +90,7 @@
 <table border = "1">
     {% for trip_item in team3 %}   
     <tr>      
+        <td>{{trip_item["catchcopy"]}}</td>   
         <td>{{trip_item["name"]}}</td>
         <td>{{trip_item["category"]}}</td>
         <td>{{trip_item["keyword1"]}}</td>
@@ -105,6 +110,7 @@
 <table border = "1">
     {% for fashion_item in team3 %}   
     <tr>      
+        <td>{{fashion_item["catchcopy"]}}</td>   
         <td>{{fashion_item["name"]}}</td>
         <td>{{fashion_item["category"]}}</td>
         <td>{{fashion_item["keyword1"]}}</td>
@@ -124,6 +130,7 @@
 <table border = "1">
     {% for food_item in team3 %}   
     <tr>      
+        <td>{{food_item["catchcopy"]}}</td>   
         <td>{{food_item["name"]}}</td>
         <td>{{food_item["category"]}}</td>
         <td>{{food_item["keyword1"]}}</td>
@@ -143,6 +150,7 @@
 <table border = "1">
     {% for life_item in team3 %}   
     <tr>      
+        <td>{{life_item["catchcopy"]}}</td>   
         <td>{{life_item["name"]}}</td>
         <td>{{life_item["category"]}}</td>
         <td>{{life_item["keyword1"]}}</td>
@@ -157,7 +165,67 @@
 </table>
 <hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
-<a href="/add">追加</a>
+<!-- medical -->
+<p>medical</p>
+<table border = "1">
+    {% for medical_item in team3 %}   
+    <tr>      
+        <td>{{medical_item["catchcopy"]}}</td>   
+        <td>{{medical_item["name"]}}</td>
+        <td>{{medical_item["category"]}}</td>
+        <td>{{medical_item["keyword1"]}}</td>
+        <td>{{medical_item["keyword2"]}}</td>
+        <td>{{medical_item["keyword3"]}}</td>
+        <td>{{medical_item["image"]}}</td>
+        <td><a href="/edit/{{medical_item['id']}}">編集</a></td>
+        <td><a href="/del/{{medical_item['id']}}">削除</a></td>
+        <td><a href="/add/{{medical_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- history -->
+<p>history</p>
+<table border = "1">
+    {% for medical_item in team3 %}   
+    <tr>      
+        <td>{{history_item["catchcopy"]}}</td>   
+        <td>{{history_item["name"]}}</td>
+        <td>{{history_item["category"]}}</td>
+        <td>{{history_item["keyword1"]}}</td>
+        <td>{{history_item["keyword2"]}}</td>
+        <td>{{history_item["keyword3"]}}</td>
+        <td>{{history_item["image"]}}</td>
+        <td><a href="/edit/{{history_item['id']}}">編集</a></td>
+        <td><a href="/del/{{history_item['id']}}">削除</a></td>
+        <td><a href="/add/{{history_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+<!-- ride -->
+<p>ride</p>
+<table border = "1">
+    {% for ride_item in team3 %}   
+    <tr>      
+        <td>{{ride_item["catchcopy"]}}</td>   
+        <td>{{ride_item["name"]}}</td>
+        <td>{{ride_item["category"]}}</td>
+        <td>{{ride_item["keyword1"]}}</td>
+        <td>{{ride_item["keyword2"]}}</td>
+        <td>{{ride_item["keyword3"]}}</td>
+        <td>{{ride_item["image"]}}</td>
+        <td><a href="/edit/{{ride_item['id']}}">編集</a></td>
+        <td><a href="/del/{{ride_item['id']}}">削除</a></td>
+        <td><a href="/add/{{ride_item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
+
 <a href="/logout">ログアウト</a>
 <!-- ここまで -->
 {% endblock %}
