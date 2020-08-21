@@ -11,24 +11,23 @@ app.secret_key = 'sunabaco_yatsusiro'
 def helloWorld():
     return "こんにちは."
 
-
+#編集リスト
 @app.route("/list")
 def testlist():
     if 'manager_id' in session:
         manager_id = session['manager_id']
         conn = sqlite3.connect('team3.db') #team3dbにコネクト
         c = conn.cursor()
-        # c.execute("SELECT *  FROM nature WHERE category_id = ?",(category_id,))
         c.execute("SELECT *  FROM nature") 
-        test_list = []
+        nature_list = []
         for row in c.fetchall():
-            test_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})
-            print(row)
+            nature_list.append({"id":row[0],"category_id":row[1],"nature_catchcopy":row[2],"nature_name":row[3],"nature_image":row[4],"nature_keyword1":row[5],"nature_keyword2":row[6],"nature_keyword3":row[7]})  
         c.close()
-        return render_template("list.html")
+        return render_template("list.html", nature_list=nature_list)
     else:
         return redirect("/login")
 
+#追加
 @app.route("/add", methods = ["GET"])
 def add_get():
     if 'manager_id' in session:
@@ -40,17 +39,53 @@ def add_get():
 def add_post():
     if 'manager_id' in session:
         manager_id = session['manager_id']
-        task = request.form.get("task")
-        limit_task = request.form.get("limit_task")
-        print(task)
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into task values(null,?,?,?)",(task,limit_task,manager_id))
+        c.execute("INSERT into art values(null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
     else:
         return redirect("/login")
+
+#課題の回答からとってきたもの
+@app.route('/upload', methods=["POST"])
+def do_upload():
+    # bbs.tplのinputタグ name="upload" をgetしてくる
+    upload = request.files['upload']
+    # uploadで取得したファイル名をlower()で全部小文字にして、ファイルの最後尾の拡張子が'.png', '.jpg', '.jpeg'ではない場合、returnさせる。
+    if not upload.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+        return 'png,jpg,jpeg形式のファイルを選択してください'
+    
+    # 下の def get_save_path()関数を使用して "./static/img/" パスを戻り値として取得する。
+    save_path = get_save_path()
+    # パスが取得できているか確認
+    print(save_path)
+    # ファイルネームをfilename変数に代入
+    filename = upload.filename
+    # 画像ファイルを./static/imgフォルダに保存。 os.path.join()は、パスとファイル名をつないで返してくれます。
+    upload.save(os.path.join(save_path,filename))
+    # ファイル名が取れることを確認、あとで使うよ
+    print(filename)
+    
+    # アップロードしたユーザのIDを取得
+    # user_id = session['user_id']
+    # conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    # update文
+    # 上記の filename 変数ここで使うよ
+    c.execute("update user set prof_img = ? where id=?", (filename,user_id))
+    conn.commit()
+    conn.close()
+
+    return redirect ('/add')
+
 
 @app.route('/edit/<int:id>')
 def edit(id):

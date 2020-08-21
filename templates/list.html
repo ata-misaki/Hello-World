@@ -1,31 +1,31 @@
+
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<p>{{user_name}}さん、こんにちは！</p>
 <hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
 <!-- 自然 -->
 <p>nature</p>
 <table border = "1">
-    {% for nature_item in team3 %}   
+ 
+    {% for item in nature_list %}   
     <tr>      
-        <td>{{nature_item["catchcopy"]}}</td>
-        <td>{{nature_item["name"]}}</td>
-        <td>{{nature_item["category_id"]}}</td>
-        <td>{{nature_item["keyword1"]}}</td>
-        <td>{{nature_item["keyword2"]}}</td>
-        <td>{{nature_item["keyword3"]}}</td>
-        <td>{{nature_item["image"]}}</td>
-        <td><a href="/edit/{{nature_item['id']}}">編集</a></td>
-        <td><a href="/del/{{nature_item['id']}}">削除</a></td>
-        <td><a href="/add/{{nature_item['id']}}">追加</a></td>
+        <td>{{item["nature_catchcopy"]}}</td>
+        <td>{{item["nature_name"]}}</td>
+        <td>{{item["nature_category_id"]}}</td>
+        <td>{{item["nature_keyword1"]}}</td>
+        <td>{{item["nature_keyword2"]}}</td>
+        <td>{{item["nature_keyword3"]}}</td>
+        <td>{{item["nature_image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
 
     </tr>
     {% endfor %}
 </table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
-<!-- 音楽 -->
+<!-- 音楽
 <p>music</p>
 <table border = "1">
     {% for music_item in team3 %}   
@@ -42,11 +42,10 @@
         <td><a href="/add/{{music_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
 
 <!-- アート -->
-<p>art</p>
+<!-- <p>art</p>
 <table border = "1">
     {% for art_item in team3 %}   
     <tr> 
@@ -63,10 +62,9 @@
     </tr>
     {% endfor %}
 </table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
 
-<!-- スポーツ -->
-<p>sport</p>
+スポーツ -->
+<!-- <p>sport</p>
 <table border = "1">
     {% for sport_item in team3 %}   
     <tr> 
@@ -82,11 +80,10 @@
         <td><a href="/add/{{sport_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
 
 <!-- 旅 -->
-<p>trip</p>
+<!-- <p>trip</p>
 <table border = "1">
     {% for trip_item in team3 %}   
     <tr>      
@@ -102,11 +99,10 @@
         <td><a href="/add/{{trip_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
 
 <!-- fashion -->
-<p>fashion</p>
+<!-- <p>fashion</p>
 <table border = "1">
     {% for fashion_item in team3 %}   
     <tr>      
@@ -122,11 +118,11 @@
         <td><a href="/add/{{fashion_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
+
 
 <!-- food -->
-<p>food</p>
+<!-- <p>food</p>
 <table border = "1">
     {% for food_item in team3 %}   
     <tr>      
@@ -143,10 +139,10 @@
     </tr>
     {% endfor %}
 </table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+
 
 <!-- life -->
-<p>life</p>
+<!-- <p>life</p>
 <table border = "1">
     {% for life_item in team3 %}   
     <tr>      
@@ -162,11 +158,11 @@
         <td><a href="/add/{{life_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
+
 
 <!-- medical -->
-<p>medical</p>
+<!-- <p>medical</p>
 <table border = "1">
     {% for medical_item in team3 %}   
     <tr>      
@@ -182,11 +178,11 @@
         <td><a href="/add/{{medical_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
+
 
 <!-- history -->
-<p>history</p>
+<!-- <p>history</p>
 <table border = "1">
     {% for medical_item in team3 %}   
     <tr>      
@@ -202,11 +198,11 @@
         <td><a href="/add/{{history_item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+</table> -->
+
 
 <!-- ride -->
-<p>ride</p>
+<!-- <p>ride</p>
 <table border = "1">
     {% for ride_item in team3 %}   
     <tr>      
@@ -223,8 +219,10 @@
     </tr>
     {% endfor %}
 </table>
-<hr color="#008080" width="100%" size="3"> <!--この線は後で消す線です。-->
+<hr color="#008080" width="100%" size="3"> この線は後で消す線です。 -->
 
+<br>
+<br>
 
 <a href="/logout">ログアウト</a>
 <!-- ここまで -->
