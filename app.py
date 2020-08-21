@@ -8,12 +8,12 @@ app = Flask(__name__)
 app.secret_key = 'sunabaco_yatsusiro'
 
 # TOPページ
-@app.route("/index")
-def helloWorld():
-    return render_template("index.html")
+# @app.route("/index")
+# def helloWorld():
+#     return render_template("index.html")
 
 # ページtop
-@app.route('/top/')
+@app.route('/index')
 def toppage():
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
@@ -66,7 +66,7 @@ def toppage():
     for row in c.fetchall():
         trip_list.append({"id":row[0],"catchcopy":row[1]})
     conn.close()
-    return render_template("top.html",foods_list = foods_list,art_list = art_list,fashion_list = fashion_list,history_list = history_list,life_list = life_list,medical_list = medical_list,music_list = music_list,nature_list = nature_list,play_list = play_list,ride_list = ride_list,sport_list = sport_list,trip_list = trip_list)
+    return render_template("index.html",foods_list = foods_list,art_list = art_list,fashion_list = fashion_list,history_list = history_list,life_list = life_list,medical_list = medical_list,music_list = music_list,nature_list = nature_list,play_list = play_list,ride_list = ride_list,sport_list = sport_list,trip_list = trip_list)
 # ページtop
 
 # コンテンツページ反映用

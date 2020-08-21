@@ -19,9 +19,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in music_list %}   
+                    <li class="item"><a href="/music/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div> -->
          </div>
@@ -31,9 +31,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in art_list %}   
+                    <li class="item"><a href="/art/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>  -->
         </div>
@@ -43,9 +43,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in sport_list %}   
+                    <li class="item"><a href="/sport/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>  -->
         </div>
@@ -55,9 +55,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in play_list %}   
+                    <li class="item"><a href="/play/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>  -->
         </div>
@@ -67,33 +67,36 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in life_list %}   
+                    <li class="item"><a href="/life/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
+        
         <div class="genre">
             <p class="title">食<span>の世界</span></p>
             <img class="musicimage" src="../static/image/food/food.jpg" alt="">
             <!-- <div class="menu_btn"> -->
-                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <a href="#" class="linkbtn">世界をのぞく</a>  
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in foods_list %}    
+                    <li class="item"><a href="/foods/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
+                
             <!-- </div>   -->
         </div>
+        
         <div class="genre">
             <p class="title">旅と外国<span>の世界</span></p>
             <img class="musicimage" src="../static/image/trip/trip.jpg" alt="">
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in trip_list %}   
+                    <li class="item"><a href="/trip/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
@@ -103,9 +106,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in nature_list %}   
+                    <li class="item"><a href="/nature/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
@@ -115,9 +118,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in fashion_list %}   
+                    <li class="item"><a href="/fashion/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
@@ -127,9 +130,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in ride_list %}   
+                    <li class="item"><a href="/ride/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
@@ -139,9 +142,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in history_list %}   
+                    <li class="item"><a href="/history/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
@@ -151,9 +154,9 @@
             <!-- <div class="menu_btn"> -->
                 <a href="#" class="linkbtn">世界をのぞく</a>      
                 <ul class="btn_item">
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
-                    <li class="item"><a href="">キャッチコピー</a></li>
+                    {% for item in medical_list %}   
+                    <li class="item"><a href="/medical/{{item['id']}}">{{item["catchcopy"]}}</a></li>
+                    {% endfor %}
                 </ul>
             <!-- </div>   -->
         </div>
