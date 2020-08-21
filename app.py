@@ -7,9 +7,10 @@ app = Flask(__name__)
 
 app.secret_key = 'sunabaco_yatsusiro'
 
-@app.route("/")
+# TOPページ
+@app.route("/index")
 def helloWorld():
-    return "Hello World."
+    return render_template("index.html")
 
 # ページtop
 @app.route('/top/')
