@@ -1,10 +1,168 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<div class="container"></div>
-    <div class="top_image">
-        <h1>僕らの知らない世界</h1>
+<!-- jquery.jsのパスを通す -->
+<script src="../static/js/jquery-3.5.1.js"></script>
+<script src="../static/js/jquery.fadethis.min.js"></script>
+<script src="../static/js/common.js"></script>
+
+<div class="container">
+    <div class="top_image">       
+        <img class="image1" src="../static/image/top/earth.jpg" alt="">
+        <p class="large">僕らの知らない世界</p>
+        <p class="small">へようこそ</p>
     </div>
+    <div class="genre_container">
+        <div class="genre">
+            <p class="title">音楽<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/music/music.jpg" alt="">          
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div> -->
+         </div>
+        <div class="genre">
+            <p class="title">芸術<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/art/art.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>  -->
+        </div>
+        <div class="genre">
+            <p class="title">スポーツ<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/sports/sports.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>  -->
+        </div>
+        <div class="genre">
+            <p class="title">娯楽<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/play/play.jpeg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>  -->
+        </div>
+        <div class="genre">
+            <p class="title">暮らし<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/life/life.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">食<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/food/food.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">旅と外国<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/trip/trip.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">自然<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/nature/nature.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">美容<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/fashion/fashion.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">乗り物<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/ride/ride.jpeg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">歴史<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/history/history.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        <div class="genre">
+            <p class="title">医療<span>の世界</span></p>
+            <img class="musicimage" src="../static/image/medical/medical.jpg" alt="">
+            <!-- <div class="menu_btn"> -->
+                <a href="#" class="linkbtn">世界をのぞく</a>      
+                <ul class="btn_item">
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                    <li class="item"><a href="">キャッチコピー</a></li>
+                </ul>
+            <!-- </div>   -->
+        </div>
+        
+    </div>
+    <div class="space">
+
+    </div>
+</div>
 
 <!-- ここまで -->
 {% endblock %}
