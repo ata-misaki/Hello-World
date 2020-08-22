@@ -21,22 +21,22 @@ def testlist():
         c.execute("SELECT *  FROM nature") 
         nature_list = []
         for row in c.fetchall():
-            nature_list.append({"id":row[0],"category_id":row[1],"nature_catchcopy":row[2],"nature_name":row[3],"nature_image":row[4],"nature_keyword1":row[5],"nature_keyword2":row[6],"nature_keyword3":row[7]})  
-        c.close()
-
-        # conn = sqlite3.connect('team3.db')
-        # c = conn.cursor()
-        # c.execute("SELECT *  FROM music") 
-        # music_list = []  
-        # for row in c.fetchall():      
-        #     music_list.append({"id":row[0],"category_id":row[1],"music_catchcopy":row[2],"music_name":row[3],"music_image":row[4],"music_keyword1":row[5],"music_keyword2":row[6],"music_keyword3":row[7]}) 
-        return render_template("list.html", nature_list=nature_list) #music_list=music_list
-
-        # c.execute("SELECT *  FROM sport") 
-        # sport_list = []  
-        # for row in c.fetchall():      
-        #     sport_list.append({"id":row[0],"category_id":row[1],"sport_catchcopy":row[2],"sport_name":row[3],"sport_image":row[4],"sport_keyword1":row[5],"sport_keyword2":row[6],"sport_keyword3":row[7]}) 
+            nature_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
         # c.close()
+        
+        c.execute("SELECT *  FROM music") 
+        music_list = []
+        for row in c.fetchall():
+            music_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()
+
+        c.execute("SELECT *  FROM art") 
+        art_list = []
+        for row in c.fetchall():
+            art_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()
+           
+        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list)
     else:
         return redirect("/login")
 

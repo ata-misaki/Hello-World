@@ -21,9 +21,10 @@
     </tr>
     {% endfor %}
 </table>
+<br>
 
 <!-- 音楽-->
-<!-- <p>music</p>
+<p>music</p>
 <table border = "1">
     {% for item in music_list %}   
     <tr>      
@@ -37,7 +38,7 @@
         <td><a href="/del/{{item['id']}}">削除</a></td>
         <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
-    {% endfor %} -->
+    {% endfor %}
 </table>
 
 <!-- アート -->
@@ -45,12 +46,12 @@
 <table border = "1">
     {% for item in art_list %}   
     <tr>      
-        <td>{{item["art_catchcopy"]}}</td>
-        <td>{{item["art_name"]}}</td>
-        <td>{{item["art_keyword1"]}}</td>
-        <td>{{item["art_keyword2"]}}</td>
-        <td>{{item["art_keyword3"]}}</td>
-        <td>{{item["art_image"]}}</td>
+        <td>{{item["catchcopy"]}}</td>
+        <td>{{item["name"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
         <td><a href="/add/{{item['id']}}">追加</a></td>
