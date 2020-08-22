@@ -107,18 +107,30 @@ header p {
     position: relative;
 }
 .btn_item{
-    background: #fff;
+    background: white;
     display: none;
     position:absolute;
-    bottom: 20%;
+    bottom: 25%;
     list-style: none;
     border-radius: 20px;
+    
   }
+.item:hover {
+    background-color: rgb(255, 242, 191);
+    border-radius: 20px;
+}
 .item {
-    border-bottom: 1px solid gray;
-    padding: 20px;
-    font-family: A-OTF 太ゴB101 Pr6N;
+    padding: 10px 20px;
+}
 
+
+
+.item a {
+    /* border-bottom: 1px solid gray; */
+    display: block;
+    text-decoration: none;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    color: black;
   }
 .space {
     height: 100px;
@@ -133,8 +145,7 @@ footer {
     align-items: center;
     width: auto;
     height: 200px;
-    background-color: #F2A922;
-    
+    background-color: #F2A922;   
 }
 
 footer p {
