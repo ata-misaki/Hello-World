@@ -64,12 +64,12 @@
 <table border = "1">
     {% for item in sport_list %}   
     <tr>      
-        <td>{{item["sport_catchcopy"]}}</td>
-        <td>{{item["sport_name"]}}</td>
-        <td>{{item["sport_keyword1"]}}</td>
-        <td>{{item["sport_keyword2"]}}</td>
-        <td>{{item["sport_keyword3"]}}</td>
-        <td>{{item["sport_image"]}}</td>
+        <td>{{item["catchcopy"]}}</td>
+        <td>{{item["name"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
         <td><a href="/add/{{item['id']}}">追加</a></td>
@@ -78,143 +78,141 @@
 </table>
 
 <!-- 旅 -->
-<!-- <p>trip</p>
+<p>trip</p>
 <table border = "1">
-    {% for trip_item in team3 %}   
+    {% for item in trip_list %}   
     <tr>      
-        <td>{{trip_item["catchcopy"]}}</td>   
-        <td>{{trip_item["name"]}}</td>
-        <td>{{trip_item["category"]}}</td>
-        <td>{{trip_item["keyword1"]}}</td>
-        <td>{{trip_item["keyword2"]}}</td>
-        <td>{{trip_item["keyword3"]}}</td>
-        <td>{{trip_item["image"]}}</td>
-        <td><a href="/edit/{{trip_item['id']}}">編集</a></td>
-        <td><a href="/del/{{trip_item['id']}}">削除</a></td>
-        <td><a href="/add/{{trip_item['id']}}">追加</a></td>
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table> -->
+</table>
 
 <!-- fashion -->
-<!-- <p>fashion</p>
+<p>fashion</p>
 <table border = "1">
-    {% for fashion_item in team3 %}   
+    {% for item in fashion_list %}   
     <tr>      
-        <td>{{fashion_item["catchcopy"]}}</td>   
-        <td>{{fashion_item["name"]}}</td>
-        <td>{{fashion_item["category"]}}</td>
-        <td>{{fashion_item["keyword1"]}}</td>
-        <td>{{fashion_item["keyword2"]}}</td>
-        <td>{{fashion_item["keyword3"]}}</td>
-        <td>{{fashion_item["image"]}}</td>
-        <td><a href="/edit/{{fashion_item['id']}}">編集</a></td>
-        <td><a href="/del/{{fashion_item['id']}}">削除</a></td>
-        <td><a href="/add/{{fashion_item['id']}}">追加</a></td>
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table> -->
+</table>
 
 
 <!-- food -->
-<!-- <p>food</p>
+<p>foods</p>
 <table border = "1">
-    {% for food_item in team3 %}   
+    {% for item in foods_list %}   
     <tr>      
-        <td>{{food_item["catchcopy"]}}</td>   
-        <td>{{food_item["name"]}}</td>
-        <td>{{food_item["category"]}}</td>
-        <td>{{food_item["keyword1"]}}</td>
-        <td>{{food_item["keyword2"]}}</td>
-        <td>{{food_item["keyword3"]}}</td>
-        <td>{{food_item["image"]}}</td>
-        <td><a href="/edit/{{food_item['id']}}">編集</a></td>
-        <td><a href="/del/{{food_item['id']}}">削除</a></td>
-        <td><a href="/add/{{food_item['id']}}">追加</a></td>
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table>
+</table> 
 
 
 <!-- life -->
-<!-- <p>life</p>
+<p>life</p>
 <table border = "1">
-    {% for life_item in team3 %}   
+    {% for item in life_list %}   
     <tr>      
-        <td>{{life_item["catchcopy"]}}</td>   
-        <td>{{life_item["name"]}}</td>
-        <td>{{life_item["category"]}}</td>
-        <td>{{life_item["keyword1"]}}</td>
-        <td>{{life_item["keyword2"]}}</td>
-        <td>{{life_item["keyword3"]}}</td>
-        <td>{{life_item["image"]}}</td>
-        <td><a href="/edit/{{life_item['id']}}">編集</a></td>
-        <td><a href="/del/{{life_item['id']}}">削除</a></td>
-        <td><a href="/add/{{life_item['id']}}">追加</a></td>
-    </tr>
-    {% endfor %}
-</table> -->
-
-
-<!-- medical -->
-<!-- <p>medical</p>
-<table border = "1">
-    {% for medical_item in team3 %}   
-    <tr>      
-        <td>{{medical_item["catchcopy"]}}</td>   
-        <td>{{medical_item["name"]}}</td>
-        <td>{{medical_item["category"]}}</td>
-        <td>{{medical_item["keyword1"]}}</td>
-        <td>{{medical_item["keyword2"]}}</td>
-        <td>{{medical_item["keyword3"]}}</td>
-        <td>{{medical_item["image"]}}</td>
-        <td><a href="/edit/{{medical_item['id']}}">編集</a></td>
-        <td><a href="/del/{{medical_item['id']}}">削除</a></td>
-        <td><a href="/add/{{medical_item['id']}}">追加</a></td>
-    </tr>
-    {% endfor %}
-</table> -->
-
-
-<!-- history -->
-<!-- <p>history</p>
-<table border = "1">
-    {% for medical_item in team3 %}   
-    <tr>      
-        <td>{{history_item["catchcopy"]}}</td>   
-        <td>{{history_item["name"]}}</td>
-        <td>{{history_item["category"]}}</td>
-        <td>{{history_item["keyword1"]}}</td>
-        <td>{{history_item["keyword2"]}}</td>
-        <td>{{history_item["keyword3"]}}</td>
-        <td>{{history_item["image"]}}</td>
-        <td><a href="/edit/{{history_item['id']}}">編集</a></td>
-        <td><a href="/del/{{history_item['id']}}">削除</a></td>
-        <td><a href="/add/{{history_item['id']}}">追加</a></td>
-    </tr>
-    {% endfor %}
-</table> -->
-
-
-<!-- ride -->
-<!-- <p>ride</p>
-<table border = "1">
-    {% for ride_item in team3 %}   
-    <tr>      
-        <td>{{ride_item["catchcopy"]}}</td>   
-        <td>{{ride_item["name"]}}</td>
-        <td>{{ride_item["category"]}}</td>
-        <td>{{ride_item["keyword1"]}}</td>
-        <td>{{ride_item["keyword2"]}}</td>
-        <td>{{ride_item["keyword3"]}}</td>
-        <td>{{ride_item["image"]}}</td>
-        <td><a href="/edit/{{ride_item['id']}}">編集</a></td>
-        <td><a href="/del/{{ride_item['id']}}">削除</a></td>
-        <td><a href="/add/{{ride_item['id']}}">追加</a></td>
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
-<hr color="#008080" width="100%" size="3"> この線は後で消す線です。 -->
+
+
+<!-- medical -->
+<p>medical</p>
+<table border = "1">
+    {% for item in medical_list %}   
+    <tr>      
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- history -->
+<p>history</p>
+<table border = "1">
+    {% for item in history_list %}   
+    <tr>      
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- ride -->
+<p>ride</p>
+<table border = "1">
+    {% for item in ride_list %}   
+    <tr>      
+        <td>{{item["catchcopy"]}}</td>   
+        <td>{{item["name"]}}</td>
+        <td>{{item["category"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<hr color="#008080" width="100%" size="3"> この線は後で消す線です。
 
 <br>
 <br>

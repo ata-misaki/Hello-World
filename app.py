@@ -35,8 +35,56 @@ def testlist():
         for row in c.fetchall():
             art_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
         # c.close()
-           
-        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list)
+
+        c.execute("SELECT *  FROM sport") 
+        sport_list = []
+        for row in c.fetchall():
+            sport_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()   
+
+        c.execute("SELECT *  FROM trip") 
+        trip_list = []
+        for row in c.fetchall():
+            trip_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close() 
+
+        c.execute("SELECT *  FROM fashion") 
+        fashion_list = []
+        for row in c.fetchall():
+            fashion_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()    
+
+        c.execute("SELECT *  FROM foods") 
+        foods_list = []
+        for row in c.fetchall():
+            foods_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()   
+
+        c.execute("SELECT *  FROM life") 
+        life_list = []
+        for row in c.fetchall():
+            life_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()   
+        
+        c.execute("SELECT *  FROM medical") 
+        medical_list = []
+        for row in c.fetchall():
+            medical_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close() 
+
+        c.execute("SELECT *  FROM history") 
+        history_list = []
+        for row in c.fetchall():
+            history_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        # c.close()     
+        
+        c.execute("SELECT *  FROM ride") 
+        ride_list = []
+        for row in c.fetchall():
+            ride_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        c.close()     
+       
+        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list, sport_list=sport_list, trip_list=trip_list, fashion_list=fashion_list, foods_list=foods_list, life_list=life_list, medical_list=medical_list, history_list=history_list, ride_list=ride_list)
     else:
         return redirect("/login")
 
