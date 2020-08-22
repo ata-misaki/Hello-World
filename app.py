@@ -22,15 +22,21 @@ def testlist():
         nature_list = []
         for row in c.fetchall():
             nature_list.append({"id":row[0],"category_id":row[1],"nature_catchcopy":row[2],"nature_name":row[3],"nature_image":row[4],"nature_keyword1":row[5],"nature_keyword2":row[6],"nature_keyword3":row[7]})  
-        # c.close()
-
-        # c = conn.cursor()
-        c.execute("SELECT *  FROM music") 
-        music_list = []  
-        for row in c.fetchall():      
-            music_list.append({"id":row[0],"category_id":row[1],"music_catchcopy":row[2],"music_name":row[3],"music_image":row[4],"music_keyword1":row[5],"music_keyword2":row[6],"music_keyword3":row[7]}) 
-        return render_template("list.html", nature_list=nature_list, music_list=music_list)
         c.close()
+
+        # conn = sqlite3.connect('team3.db')
+        # c = conn.cursor()
+        # c.execute("SELECT *  FROM music") 
+        # music_list = []  
+        # for row in c.fetchall():      
+        #     music_list.append({"id":row[0],"category_id":row[1],"music_catchcopy":row[2],"music_name":row[3],"music_image":row[4],"music_keyword1":row[5],"music_keyword2":row[6],"music_keyword3":row[7]}) 
+        return render_template("list.html", nature_list=nature_list) #music_list=music_list
+
+        # c.execute("SELECT *  FROM sport") 
+        # sport_list = []  
+        # for row in c.fetchall():      
+        #     sport_list.append({"id":row[0],"category_id":row[1],"sport_catchcopy":row[2],"sport_name":row[3],"sport_image":row[4],"sport_keyword1":row[5],"sport_keyword2":row[6],"sport_keyword3":row[7]}) 
+        # c.close()
     else:
         return redirect("/login")
 

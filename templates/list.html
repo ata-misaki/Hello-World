@@ -9,12 +9,12 @@
 <table border = "1">
     {% for item in nature_list %}   
     <tr>      
-        <td>{{item["nature_catchcopy"]}}</td>
-        <td>{{item["nature_name"]}}</td>
-        <td>{{item["nature_keyword1"]}}</td>
-        <td>{{item["nature_keyword2"]}}</td>
-        <td>{{item["nature_keyword3"]}}</td>
-        <td>{{item["nature_image"]}}</td>
+        <td>{{item["catchcopy"]}}</td>
+        <td>{{item["name"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
         <td><a href="/add/{{item['id']}}">追加</a></td>
@@ -23,21 +23,21 @@
 </table>
 
 <!-- 音楽-->
-<p>music</p>
+<!-- <p>music</p>
 <table border = "1">
     {% for item in music_list %}   
     <tr>      
-        <td>{{item["music_catchcopy"]}}</td>
-        <td>{{item["music_name"]}}</td>
-        <td>{{item["music_keyword1"]}}</td>
-        <td>{{item["music_keyword2"]}}</td>
-        <td>{{item["music_keyword3"]}}</td>
-        <td>{{item["music_image"]}}</td>
+        <td>{{item["catchcopy"]}}</td>
+        <td>{{item["name"]}}</td>
+        <td>{{item["keyword1"]}}</td>
+        <td>{{item["keyword2"]}}</td>
+        <td>{{item["keyword3"]}}</td>
+        <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
         <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
-    {% endfor %}
+    {% endfor %} -->
 </table>
 
 <!-- アート -->
@@ -59,23 +59,22 @@
 </table>
 
 <!-- スポーツ --> 
-<!-- <p>sport</p>
+<p>sport</p>
 <table border = "1">
-    {% for sport_item in team3 %}   
-    <tr> 
-        <td>{{sport_item["catchcopy"]}}</td>   
-        <td>{{sport_item["name"]}}</td>
-        <td>{{sport_item["category"]}}</td>
-        <td>{{sport_item["keyword1"]}}</td>
-        <td>{{sport_item["keyword2"]}}</td>
-        <td>{{sport_item["keyword3"]}}</td>
-        <td>{{sport_item["image"]}}</td>
-        <td><a href="/edit/{{sport_item['id']}}">編集</a></td>
-        <td><a href="/del/{{sport_item['id']}}">削除</a></td>
-        <td><a href="/add/{{sport_item['id']}}">追加</a></td>
+    {% for item in sport_list %}   
+    <tr>      
+        <td>{{item["sport_catchcopy"]}}</td>
+        <td>{{item["sport_name"]}}</td>
+        <td>{{item["sport_keyword1"]}}</td>
+        <td>{{item["sport_keyword2"]}}</td>
+        <td>{{item["sport_keyword3"]}}</td>
+        <td>{{item["sport_image"]}}</td>
+        <td><a href="/edit/{{item['id']}}">編集</a></td>
+        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
-</table> -->
+</table>
 
 <!-- 旅 -->
 <!-- <p>trip</p>
