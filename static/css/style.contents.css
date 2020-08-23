@@ -1,0 +1,61 @@
+/* リセット */
+body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ここから */
+.contents_base{
+    width: auto;
+    background-color: #010103;
+   
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+}
+
+.keyword_base{
+    width: 70%;
+    margin: 40px auto;
+    text-align: left;
+    display: flex;
+    position: relative;
+}
+
+.keyword {
+    text-align: left;
+    color: #fff;
+    display: inline-table;
+}
+
+ul, ol {
+    background: #fcfcfc;/*背景色*/
+    padding: 0.5em 0.5em 0.5em 2em;/*ボックス内の余白*/
+    border: solid 3px gray;/*線の種類 太さ 色*/
+    color: #010103;
+  }
+
+ul li, ol li {
+    line-height: 1.5; /*文の行高*/
+    padding: 0.5em 0; /*前後の文との余白*/
+  }
+
+
+.name_space {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 17px;
+    opacity: 1;
+    color: #010103;
+    text-align: center;
+}
+
+.fixed_word {
+    color: #61A6FF;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
