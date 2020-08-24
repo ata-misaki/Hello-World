@@ -3,8 +3,8 @@
 <!-- ここから -->
 
 
-<p>Art add</p>
-<form action="/add/art" method="post">
+<p>Medical add</p>
+<form action="/add/medical" method="post">
     <p>キャッチコピー</p>
     <input type="text" maxlength="100" name = "catchcopy">
     <p>名前</p>
@@ -16,12 +16,13 @@
     <p>キーワード3</p>
     <input type="text" maxlength="100" name = "keyword3">
     
-    <!-- 画像アップデートとプレビューをどうするか -->  
+    <!-- 画像アップデートとプレビューをどうするか -->
     <p>画像</p>
-    <input type="text" name="image"> 
+    <input type="file" name="image"> 
     <img style="width:100px">
     <br>
     <br>
+
     <input type="submit" name="save" value="追加">
 </form>
 

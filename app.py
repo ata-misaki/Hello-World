@@ -283,6 +283,150 @@ def add_fashion_post():
         return redirect("/login")
 
 
+#foods追加
+@app.route("/add/foods", methods = ["GET"])
+def add_foods_get():
+    if 'manager_id' in session:
+        return render_template("add_foods.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/foods", methods = ["POST"])
+def add_foods_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into foods values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+#life追加
+@app.route("/add/life", methods = ["GET"])
+def add_life_get():
+    if 'manager_id' in session:
+        return render_template("add_life.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/life", methods = ["POST"])
+def add_life_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into life values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+#medical追加
+@app.route("/add/medical", methods = ["GET"])
+def add_medical_get():
+    if 'manager_id' in session:
+        return render_template("add_madical.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/medical", methods = ["POST"])
+def add_medical_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into medical values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+#history追加
+@app.route("/add/history", methods = ["GET"])
+def add_history_get():
+    if 'manager_id' in session:
+        return render_template("add_history.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/history", methods = ["POST"])
+def add_history_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into history values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+#ride追加
+@app.route("/add/ride", methods = ["GET"])
+def add_ride_get():
+    if 'manager_id' in session:
+        return render_template("add_ride.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/ride", methods = ["POST"])
+def add_history_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into ride values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
 
 # 編集コーナー
 @app.route('/edit/<int:id>')
