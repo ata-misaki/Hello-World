@@ -94,7 +94,7 @@ def life_con():
 
 
 
-@app.route("/foods_con")
+@app.route("/food_con")
 def foods_con():
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
