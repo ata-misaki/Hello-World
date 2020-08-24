@@ -5,9 +5,17 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 
 /* ここから */
+@media screen and (max-width:480px) {
+    
+}
 .contents_base{
-    width: auto;
     background-color: #010103;
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 50px; */
+    width: auto;
     height: auto;
 }
 
@@ -15,14 +23,30 @@ h1 {
     color: #fff;
     text-align: center;
     padding: 25px;
+    /* display: flex;
+    justify-content: center; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.keyword_base{
-    width: 70%;
-    margin: 40px auto;
+.image {
+    width: 50%;
+    height: 50%;
+}
+
+.contents_main {
+    width: auto;
+    margin: 10px auto;
     text-align: left;
     display: flex;
     position: relative;
+    justify-content: center;
+}
+
+.keyword_base{
+    width: 80%;
+    margin: auto;
+    
 }
 
 .keyword {
@@ -51,17 +75,29 @@ ul li, ol li {
     opacity: 1;
     color: #010103;
     text-align: center;
+    padding-bottom: 3%;
 }
 
+.fixed_base {
+    text-align: center;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 .fixed_word {
     color: #61A6FF;
-    text-align: center;
     padding-top: 7%;
     padding-bottom: 5%;
+    /* position: absolute;
+    bottom: 5px; */
+    text-align: center;
 }
 
 .top_return {
-    width: 200px;
+    width: 250px;
     height: 50px;
     line-height: 50px;
     background-color: #A61010;
@@ -73,10 +109,19 @@ ul li, ol li {
     text-decoration: none;
     border-radius: 20px; 
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin: 20px;
+    /* margin-top: 2%;
+    margin-bottom: 2%; */
+    /* position: absolute; */
+    /* bottom: 2px; */
+    /* transform: translate(-50%, -50%); */
+    /* margin-right: auto;
+    /* margin-left: auto; */
+    /* top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%); */ */
 }
 
 .top_return:active {
@@ -87,3 +132,10 @@ ul li, ol li {
 .top_return_text {
     color: #fff;
 }
+
+/* .empty {
+    background-color: #010103;
+    margin: 0;
+    width: auto;
+    height: 25px;
+} */
