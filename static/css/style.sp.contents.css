@@ -5,9 +5,9 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 
 @media screen and (max-width:480px){
+
 .contents_base{
     background-color: #010103;
-    /* display: flex;
     justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
@@ -27,8 +27,8 @@ h1 {
 }
 
 .image {
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
 }
 
 .contents_main {
@@ -114,6 +114,7 @@ ul li, ol li {
     /* transform: translate(-50%, -50%); */
     /* margin-right: auto;
     /* margin-left: auto; */
+    /* top: 0;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -129,4 +130,21 @@ ul li, ol li {
     color: #fff;
 }
 
+/* .empty {
+    background-color: #010103;
+    margin: 0;
+    width: auto;
+    height: 25px;
+} */
+
+h3 {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.google_link {
+    color: #DB1C29;
+}
 }

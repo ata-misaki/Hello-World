@@ -1,3 +1,5 @@
+
+
 /* リセット */
 body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     margin: 0px;
@@ -136,3 +138,14 @@ ul li, ol li {
     width: auto;
     height: 25px;
 } */
+
+h3 {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.google_link {
+    color: #DB1C29;
+}
