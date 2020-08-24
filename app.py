@@ -408,7 +408,7 @@ def add_ride_get():
         return redirect("/login")
 
 @app.route("/add/ride", methods = ["POST"])
-def add_history_post():
+def add_ride_post():
     if 'manager_id' in session:
         manager_id = session['manager_id']
         catchcopy = request.form.get("catchcopy")
@@ -429,22 +429,29 @@ def add_history_post():
 
 
 # 編集コーナー
-@app.route('/edit/<int:id>')
-def art_edit(id):
+@app.route('/edit/nature/<int:id>')
+def nature_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT task ,limit_task FROM task WHERE id = ?",(id,))
-        task = c.fetchone()
+        c.execute("SELECT * FROM nature WHERE id = ?",(id,))
+        nature_item = c.fetchone()
         conn.close()
-        if task is not None:
-            task_name = task[0]
-            limit_task = task[1]
-        else:
-            return "アイテムがありません"
-        
-        item = {"id":id,"task":task_name,"limit_task":limit_task}
-        return render_template("edit.html",task = item)
+        # if nature_item is not None:
+            
+        id= nature_item[0]
+        category_name=nature_item[1]
+        catchcopy = nature_item[2]
+        name = nature_item[3]
+        image = nature_item[4]
+        keyword1 = nature_item[5]
+        keyword2 = nature_item[6]
+        keyword3 = nature_item[7]
+        # else:
+        #     return "アイテムがありません"
+
+        # nature_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3}
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3)
     else:
         return redirect("/login")
 
@@ -510,12 +517,12 @@ def login_get():
     return render_template("login.html")
 
 @app.route("/login",methods=["POST"])
-def login_post():
+def login_list():
     manager_id = request.form.get("manager_id")
     password = request.form.get("password")
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("SELECT id FROM manager WHERE manager_id = ? AND password = ?",(manager_id,password))
+    c.execute("SELECT * FROM manager WHERE manager_id = ? AND password = ?",(manager_id,password))
     manager_id = c.fetchone()
     print(manager_id)
     c.close()
