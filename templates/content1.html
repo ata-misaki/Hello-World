@@ -4,19 +4,16 @@
 <link rel="stylesheet" href="../static/css/content.css" media="screen and (min-width: 501px)">
 <div class="container">
     <div class="content_image">       
-        <p class="title">音楽の世界</p>
-        <img class="image" src="../static/image/music/music.jpg" alt="">
+        <p class="title">{{name}}の世界</p>
+        <img class="image" src="../static/image/{{img}}/{{img}}.jpg" alt="">
     </div>
     <!-- <div class="text_container"> -->
         <ul class="content_item">
             <li class="item">
-                <a href="#">キャッチコピー</a>
-                <a href="#">キャッチコピー</a>
-                <a href="#">キャッチコピー</a>
-            </li>
-            <!-- {% for item in art_list %}    -->
-            <!-- <li class="item"><a href="/music/{{item['id']}}">{{item["catchcopy"]}}</a></li> -->
-            <!-- {% endfor %} -->
+                {% for item in contents_list %}  
+                <a href="/{{item['category']}}/{{item['id']}}">{{item["catchcopy"]}}</a>
+                {% endfor %}
+            </li> 
         </ul>
     <!-- </div> -->
 </div> 
