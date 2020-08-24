@@ -55,8 +55,11 @@ def sport_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
-
+    c.execute("select name,category from category where id == 3 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 @app.route("/play_con")
 def play_con():
@@ -66,7 +69,12 @@ def play_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 4 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/life_con")
@@ -77,7 +85,12 @@ def life_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 5 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 
@@ -89,7 +102,12 @@ def foods_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 6 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/trip_con")
@@ -100,7 +118,12 @@ def trip_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 7 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/nature_con")
@@ -111,7 +134,12 @@ def nature_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 8 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/fashion_con")
@@ -122,7 +150,12 @@ def fashion_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 9 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/ride_con")
@@ -133,7 +166,12 @@ def ride_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 10 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/history_con")
@@ -144,7 +182,12 @@ def history_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 11 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
+
 
 
 @app.route("/medical_con")
@@ -155,7 +198,11 @@ def medical_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 12 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
 
