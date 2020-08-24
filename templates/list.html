@@ -20,7 +20,8 @@
     </tr>
     {% endfor %}
 </table>
-<br>
+<a href="/add/nature">追加</a>
+
 
 <!-- 音楽-->
 <p>music</p>
@@ -35,10 +36,10 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/music">追加</a>
 
 <!-- アート -->
 <p>art</p>
@@ -53,7 +54,6 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
@@ -72,10 +72,11 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/sport">追加</a>
+
 
 <!-- 旅 -->
 <p>trip</p>
@@ -91,10 +92,11 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/trip">追加</a>
+
 
 <!-- fashion -->
 <p>fashion</p>
@@ -110,10 +112,11 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/fashion">追加</a>
+
 
 
 <!-- food -->
@@ -130,10 +133,11 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table> 
+<a href="/add/foods">追加</a>
+
 
 
 <!-- life -->
@@ -150,10 +154,10 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/life">追加</a>
 
 
 <!-- medical -->
@@ -170,10 +174,11 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/medical">追加</a>
+
 
 <!-- history -->
 <p>history</p>
@@ -189,10 +194,11 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
+<a href="/add/history">追加</a>
+
 
 <!-- ride -->
 <p>ride</p>
@@ -208,15 +214,12 @@
         <td>{{item["image"]}}</td>
         <td><a href="/edit/{{item['id']}}">編集</a></td>
         <td><a href="/del/{{item['id']}}">削除</a></td>
-        <td><a href="/add/{{item['id']}}">追加</a></td>
     </tr>
     {% endfor %}
 </table>
-<hr color="#008080" width="100%" size="3"> この線は後で消す線です。
-
+<a href="/add/ride">追加</a>
 <br>
 <br>
-
 <a href="/logout">ログアウト</a>
 <!-- ここまで -->
 {% endblock %}

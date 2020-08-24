@@ -108,7 +108,7 @@ def add_post():
         return redirect("/login")
 
 
-#art追加をやっている途中です
+#art_追加
 @app.route("/add/art", methods = ["GET"])
 def add_art_get():
     if 'manager_id' in session:
@@ -122,19 +122,48 @@ def add_art_post():
         manager_id = session['manager_id']
         catchcopy = request.form.get("catchcopy")
         name = request.form.get("name")
+        image = request.form.get("image")
         keyword1 = request.form.get("keyword1")
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into art values(null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into art values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
     else:
         return redirect("/login")
 
+
+# nature追加
+@app.route("/add/nature", methods = ["GET"])
+def add_nature_get():
+    if 'manager_id' in session:
+        return render_template("add_nature.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/nature", methods = ["POST"])
+def add_nature_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into nature values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
 
 
 
