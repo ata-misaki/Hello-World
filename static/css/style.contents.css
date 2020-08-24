@@ -8,7 +8,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 
 .contents_base{
     background-color: #010103;
-    justify-content: center; */
+    justify-content: center; 
     align-items: center;
     flex-wrap: wrap;
     /* margin: 50px; */
@@ -118,7 +118,7 @@ ul li, ol li {
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%); */ */
+    -ms-transform: translateX(-50%); */ 
 }
 
 .top_return:active {
