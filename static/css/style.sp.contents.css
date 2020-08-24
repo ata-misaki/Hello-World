@@ -4,7 +4,6 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     padding: 0px;
 }
 
-@media screen and (max-width:480px){
 .contents_base{
     background-color: #010103;
     /* display: flex;
@@ -72,7 +71,13 @@ ul li, ol li {
     opacity: 1;
     color: #010103;
     text-align: center;
-    padding-bottom: 3%;
+    padding: 3%;
+    font-size: small;
+}
+
+.keyword_g {
+    padding-top: 5%;
+    font-size: x-small;
 }
 
 .fixed_base {
@@ -140,4 +145,3 @@ h3 {
     color: #DB1C29;
 }
 
-}

@@ -71,10 +71,15 @@ ul li, ol li {
     border-radius: 17px;
     opacity: 1;
     color: #010103;
+    padding: 5%;
     text-align: center;
-    padding-bottom: 3%;
+    font-size: x-large;
 }
 
+.keyword_g {
+    padding-top: 15%;
+    font-size: large;
+}
 .fixed_base {
     text-align: center;
     /* position: relative; */

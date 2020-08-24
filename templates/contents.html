@@ -3,8 +3,8 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<link rel="stylesheet" href="/static/css/style.sp.contents.css">
-<link rel="stylesheet" href="/static/css/style.contents.css">
+<link rel="stylesheet" href="/static/css/style.sp.contents.css" media="screen and (max-width: 500px)">
+<link rel="stylesheet" href="/static/css/style.contents.css" media="screen and (min-width: 501px)">
 <div class="contents_base">
     <h1 class="catchcopy">{{catchcopy}}</h1>
     
@@ -16,7 +16,7 @@
             <div class="keyword"> 
                 <p class="name_space">{{name}}</p>
             
-                <p class="">キーワードで検索！！</p>
+                <p class="keyword_g">キーワードで検索！！</p>
                 <ul>
                     <li>{{keyword1}}</li>
                     <li>{{keyword2}}</li>
