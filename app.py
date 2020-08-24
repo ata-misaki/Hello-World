@@ -430,7 +430,7 @@ def add_history_post():
 
 # 編集コーナー
 @app.route('/edit/<int:id>')
-def edit(id):
+def art_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
@@ -466,6 +466,9 @@ def update_task():
     else:
         return redirect("/login")
 
+
+
+# 削除
 @app.route('/del/<int:id>')
 def del_task(id):
     if 'manager_id' in session:
