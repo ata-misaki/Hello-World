@@ -1,0 +1,138 @@
+/* リセット */
+body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ここから */
+
+.contents_base{
+    background-color: #010103;
+    justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 50px; */
+    width: auto;
+    height: auto;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    /* display: flex;
+    justify-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    width: 50%;
+    height: 50%;
+}
+
+.contents_main {
+    width: auto;
+    margin: 10px auto;
+    text-align: left;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.keyword_base{
+    width: 80%;
+    margin: auto;
+    
+}
+
+.keyword {
+    text-align: left;
+    color: #fff;
+    display: inline-table;
+}
+
+ul, ol {
+    background: #fcfcfc;/*背景色*/
+    padding: 0.5em 0.5em 0.5em 2em;/*ボックス内の余白*/
+    border: solid 3px gray;/*線の種類 太さ 色*/
+    color: #010103;
+  }
+
+ul li, ol li {
+    line-height: 1.5; /*文の行高*/
+    padding: 0.5em 0; /*前後の文との余白*/
+  }
+
+
+.name_space {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 17px;
+    opacity: 1;
+    color: #010103;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.fixed_base {
+    text-align: center;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.fixed_word {
+    color: #61A6FF;
+    padding-top: 7%;
+    padding-bottom: 5%;
+    /* position: absolute;
+    bottom: 5px; */
+    text-align: center;
+}
+
+.top_return {
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #A61010;
+    box-shadow: 0 5px 0 #FEACAC;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px; 
+    display: block;
+    margin: 20px;
+    /* margin-top: 2%;
+    margin-bottom: 2%; */
+    /* position: absolute; */
+    /* bottom: 2px; */
+    /* transform: translate(-50%, -50%); */
+    /* margin-right: auto;
+    /* margin-left: auto; */
+    /* top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%); */ */
+}
+
+.top_return:active {
+    top: 2px;
+      box-shadow: 0 2px 0 #FEACAC;
+}
+
+.top_return_text {
+    color: #fff;
+}
+
+/* .empty {
+    background-color: #010103;
+    margin: 0;
+    width: auto;
+    height: 25px;
+} */

@@ -13,4 +13,38 @@
 
 </form>
 <!-- ここまで -->
+{% extends "base.html" %}
+{% block content %}
+<!-- ここから -->
+<div class="contents_base">
+    <h1 class="catchcopy">{{catchcopy}}catchcopy</h1>
+    
+    
+    <div class="keyword_base">
+        <div class="contents_main">
+            <img src="{{image}}" alt="イメージ画像" class="image">
+        
+            <div class="keyword"> 
+                <p class="name_space">{{name}}name</p>
+            
+                <p class="">キーワードで検索！！</p>
+                <ul>
+                    <li>{{keyword1}}keyword1</li>
+                    <li>{{keyword2}}keyword2</li>
+                    <li>{{keyword3}}keyword3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed_base">
+        <h2 class="fixed_word">え？気になる？　じゃー、<a href="https://www.google.com/" class="google_link">Google</a>検索してみてね！</h2>
+        
+        <h3 class="top_return"><a href="#" class="top_return_text">TOPにもどる</a></h3>
+        
+    </div>
+    <!-- <p class="empty">{{""}}</p> -->
+
+</div>
+<!-- ここまで -->
 {% endblock %}
