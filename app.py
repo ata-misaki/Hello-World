@@ -51,7 +51,7 @@ def art_con():
 def sport_con():
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("select category.category,sport.id,sport.catchcopy from category join sport on category.name = sport.category_name")
+    c.execute("select category.category,sports.id,sports.catchcopy from category join sports on category.name = sports.category_name")
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
@@ -98,7 +98,7 @@ def life_con():
 def foods_con():
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("select category.category,foods.id,foods.catchcopy from category join foods on category.name = foods.category_name")
+    c.execute("select category.category,food.id,food.catchcopy from category join food on category.name = food.category_name")
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
@@ -146,7 +146,7 @@ def nature_con():
 def fashion_con():
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("select category.category,fashion.id,fashion.catchcopy from category join fasion on category.name = fasion.category_name")
+    c.execute("select category.category,fashion.id,fashion.catchcopy from category join fashion on category.name = fashion.category_name")
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
@@ -240,31 +240,31 @@ def fashionpage(id):
     return render_template("contents.html",category_id = category_id,category_name = category_name,catchcopy = catchcopy,name = name,keyword1 = keyword1,keyword2 = keyword2,keyword3 = keyword3,image = image )
 # テーブルfashion
 
-# テーブルfoods
+# テーブルfood
 @app.route('/foods/<int:id>')
 def foodspage(id):
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("select id,category_name,catchcopy,name,keyword1 from foods where id = ?", (id,) )
+    c.execute("select id,category_name,catchcopy,name,keyword1 from food where id = ?", (id,) )
     contents = c.fetchone()
     category_id = contents[0]
     category_name = contents[1]
     catchcopy = contents[2]
     name = contents[3]
     keyword1 = contents[4]
-    c.execute("select keyword2 from foods where id = ? and keyword2 is not null", (id,) )
+    c.execute("select keyword2 from food where id = ? and keyword2 is not null", (id,) )
     keyword2 = c.fetchone()
     if keyword2 is not None:
         keyword2 = keyword2[0]
     else:
         keyword2 = ""
-    c.execute("select keyword3 from foods where id = ? and keyword3 is not null", (id,) )
+    c.execute("select keyword3 from food where id = ? and keyword3 is not null", (id,) )
     keyword3 = c.fetchone()
     if keyword3 is not None:
         keyword3 = keyword3[0]
     else:
         keyword3 = ""
-    c.execute("select image from foods where id = ?", (id,) )
+    c.execute("select image from food where id = ?", (id,) )
     image = c.fetchone()
     image = image[0]
     conn.close()
@@ -536,26 +536,26 @@ def ridepage(id):
 def sportpage(id):
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
-    c.execute("select id,category_name,catchcopy,name,keyword1 from sport where id = ?", (id,) )
+    c.execute("select id,category_name,catchcopy,name,keyword1 from sports where id = ?", (id,) )
     contents = c.fetchone()
     category_id = contents[0]
     category_name = contents[1]
     catchcopy = contents[2]
     name = contents[3]
     keyword1 = contents[4]
-    c.execute("select keyword2 from sport where id = ? and keyword2 is not null", (id,) )
+    c.execute("select keyword2 from sports where id = ? and keyword2 is not null", (id,) )
     keyword2 = c.fetchone()
     if keyword2 is not None:
         keyword2 = keyword2[0]
     else:
         keyword2 = ""
-    c.execute("select keyword3 from sport where id = ? and keyword3 is not null", (id,) )
+    c.execute("select keyword3 from sports where id = ? and keyword3 is not null", (id,) )
     keyword3 = c.fetchone()
     if keyword3 is not None:
         keyword3 = keyword3[0]
     else:
         keyword3 = ""
-    c.execute("select image from sport where id = ?", (id,) )
+    c.execute("select image from sports where id = ?", (id,) )
     image = c.fetchone()
     image = image[0]
     conn.close()
