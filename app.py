@@ -7,10 +7,15 @@ app = Flask(__name__)
 
 app.secret_key = 'sunabaco_yatsusiro'
 
+# インデックスページ
+
 
 @app.route("/index")
 def indexpage():
     return render_template("index.html")
+
+
+# カテゴリーページ反映用
 
 @app.route("/music_con")
 def music_con():
@@ -21,6 +26,129 @@ def music_con():
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
     return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/art_con")
+def art_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,art.id,art.catchcopy from category join art on category.name = art.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/sport_con")
+def sport_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,sport.id,sport.catchcopy from category join sport on category.name = sport.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/play_con")
+def play_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,play.id,play.catchcopy from category join play on category.name = play.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/life_con")
+def life_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,life.id,life.catchcopy from category join life on category.name = life.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+
+@app.route("/foods_con")
+def foods_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,foods.id,foods.catchcopy from category join foods on category.name = foods.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/trip_con")
+def trip_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,trip.id,trip.catchcopy from category join trip on category.name = trip.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/nature_con")
+def nature_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,nature.id,nature.catchcopy from category join nature on category.name = nature.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/fashion_con")
+def fashion_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,fashion.id,fashion.catchcopy from category join fasion on category.name = fasion.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/ride_con")
+def ride_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,ride.id,ride.catchcopy from category join ride on category.name = ride.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/history_con")
+def history_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,history.id,history.catchcopy from category join history on category.name = history.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
+
+@app.route("/medical_con")
+def medical_con():
+    conn = sqlite3.connect('team3.db')
+    c = conn.cursor()
+    c.execute("select category.category,medical.id,medical.catchcopy from category join medical on category.name = medical.category_name")
+    contents_list = []
+    for row in c.fetchall():
+        contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
+    return render_template("category.html", contents_list = contents_list)
+
 
 
 
