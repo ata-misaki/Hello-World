@@ -4,8 +4,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     padding: 0px;
 }
 
-/* ここから */
-
+@media screen and (max-width:480px){
 .contents_base{
     background-color: #010103;
     /* display: flex;
@@ -131,9 +130,4 @@ ul li, ol li {
     color: #fff;
 }
 
-/* .empty {
-    background-color: #010103;
-    margin: 0;
-    width: auto;
-    height: 25px;
-} */
+}
