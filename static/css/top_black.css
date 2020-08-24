@@ -1,0 +1,123 @@
+
+/* リセット */
+body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* index */
+/* topimage */
+.container {
+    background-color: #010103;
+}
+.top_image{
+    position: relative;
+}
+.top_image .large {
+    position: absolute;
+    color: white;
+    top: 15%;
+    font-size: 70px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    width: 100%;
+    text-align: center;
+    margin: 0%;
+}
+.top_image .small {
+    position: absolute;
+    color: white;
+    top: 30%;
+    left: 50%;
+    font-size: 60px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    transform: translate(-50%,-50%);
+}
+.image1 {
+    width: 100%;
+    object-fit: cover;
+}
+/* ジャンル */
+.genre_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.genre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    position: relative;
+} 
+.genre .title {
+    color: white;
+    font-size: 50px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    margin: 15px;
+}
+.genre .title span{
+    color: white;
+    font-size: 30px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    margin: 15px;
+}
+
+.genre .musicimage {
+    width: 100%;
+}
+.linkbtn {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #A61010;
+    box-shadow: 0 5px 0 #FEACAC;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    margin: 30px 0 50px 0;    
+}
+.linkbtn:active {
+    top: 2px;
+      box-shadow: 0 2px 0 #FEACAC;
+}  
+.menu_btn {
+    position: relative;
+}
+.btn_item{
+    background: white;
+    display: none;
+    position:absolute;
+    bottom: 25%;
+    list-style: none;
+    border-radius: 20px;
+    
+  }
+.item:hover {
+    background-color: rgb(255, 242, 191);
+    border-radius: 20px;
+}
+.item {
+    padding: 10px 20px;
+}
+
+
+
+.item a {
+    /* border-bottom: 1px solid gray; */
+    display: block;
+    text-decoration: none;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    color: black;
+  }
+.space {
+    height: 100px;
+}
+
+
