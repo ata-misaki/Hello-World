@@ -8,7 +8,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 .contents_base{
     width: auto;
     background-color: #010103;
-   
+    height: auto;
 }
 
 h1 {
@@ -56,6 +56,34 @@ ul li, ol li {
 .fixed_word {
     color: #61A6FF;
     text-align: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 7%;
+    padding-bottom: 5%;
+}
+
+.top_return {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #A61010;
+    box-shadow: 0 5px 0 #FEACAC;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.top_return:active {
+    top: 2px;
+      box-shadow: 0 2px 0 #FEACAC;
+}
+
+.top_return_text {
+    color: #fff;
 }

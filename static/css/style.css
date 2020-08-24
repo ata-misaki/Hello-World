@@ -74,3 +74,13 @@ footer p {
     background-color: #1397D8;
   }
 
+  h3 {
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  .google_link {
+    color:#DB1C29;
+}
+
