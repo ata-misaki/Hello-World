@@ -241,7 +241,7 @@ def fashionpage(id):
 # テーブルfashion
 
 # テーブルfood
-@app.route('/foods/<int:id>')
+@app.route('/food/<int:id>')
 def foodspage(id):
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
@@ -532,7 +532,7 @@ def ridepage(id):
 
 
 # テーブルsport
-@app.route('/sport/<int:id>')
+@app.route('/sports/<int:id>')
 def sportpage(id):
     conn = sqlite3.connect('team3.db')
     c = conn.cursor()
