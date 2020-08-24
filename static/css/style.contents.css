@@ -8,7 +8,6 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 
 .contents_base{
     background-color: #010103;
-    /* display: flex;
     justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
