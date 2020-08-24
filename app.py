@@ -25,7 +25,7 @@ def music_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/art_con")
@@ -36,7 +36,7 @@ def art_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/sport_con")
@@ -47,7 +47,7 @@ def sport_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/play_con")
@@ -58,7 +58,7 @@ def play_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/life_con")
@@ -69,7 +69,7 @@ def life_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 
@@ -81,7 +81,7 @@ def foods_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/trip_con")
@@ -92,7 +92,7 @@ def trip_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/nature_con")
@@ -103,7 +103,7 @@ def nature_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/fashion_con")
@@ -114,7 +114,7 @@ def fashion_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/ride_con")
@@ -125,7 +125,7 @@ def ride_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/history_con")
@@ -136,7 +136,7 @@ def history_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 @app.route("/medical_con")
@@ -147,65 +147,11 @@ def medical_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    return render_template("category.html", contents_list = contents_list)
+    return render_template("content1.html", contents_list = contents_list)
 
 
 
 
-# # ページtop
-# @app.route('/contents')
-# def toppage():
-#     conn = sqlite3.connect('team3.db')
-#     c = conn.cursor()
-#     c.execute("select id,catchcopy from foods")
-#     foods_list = []
-#     for row in c.fetchall():
-#         foods_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from art")
-#     art_list = []
-#     for row in c.fetchall():
-#         art_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from fashion")
-#     fashion_list = []
-#     for row in c.fetchall():
-#         fashion_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from history")
-#     history_list = []
-#     for row in c.fetchall():
-#         history_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from life")
-#     life_list = []
-#     for row in c.fetchall():
-#         life_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from medical")
-#     medical_list = []
-#     for row in c.fetchall():
-#         medical_list.append({"id":row[0],"catchcopy":row[1]})
-
-#     c.execute("select id,catchcopy from nature")
-#     nature_list = []
-#     for row in c.fetchall():
-#         nature_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from play")
-#     play_list = []
-#     for row in c.fetchall():
-#         play_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from ride")
-#     ride_list = []
-#     for row in c.fetchall():
-#         ride_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from sport")
-#     sport_list = []
-#     for row in c.fetchall():
-#         sport_list.append({"id":row[0],"catchcopy":row[1]})
-#     c.execute("select id,catchcopy from trip")
-#     trip_list = []
-#     for row in c.fetchall():
-#         trip_list.append({"id":row[0],"catchcopy":row[1]})
-#     conn.close()
-#     return render_template("content1.html",foods_list = foods_list,art_list = art_list,fashion_list = fashion_list,history_list = history_list,life_list = life_list,medical_list = medical_list,music_list = music_list,nature_list = nature_list,play_list = play_list,ride_list = ride_list,sport_list = sport_list,trip_list = trip_list)
-
-# ページtop
 
 # コンテンツページ反映用
 # テーブルfashion
