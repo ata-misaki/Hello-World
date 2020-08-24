@@ -1,23 +1,12 @@
-{% extends "base.html" %}
-{% block content %}
-<!-- ここから -->
 
-    <h1>{{category_name}}</h1>
-    <p>{{catchcopy}}</p>
-    <h1>{{name}}</h1>
-    <p>{{keyword1}}</p>
-    <p>{{keyword2}}</p>
-    <p>{{keyword3}}</p>
-    <img src="{{image}}" alt="イメージ画像">
-
-
-</form>
 <!-- ここまで -->
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
+<link rel="stylesheet" href="/static/css/style.sp.contents.css">
+<link rel="stylesheet" href="/static/css/style.contents.css">
 <div class="contents_base">
-    <h1 class="catchcopy">{{catchcopy}}catchcopy</h1>
+    <h1 class="catchcopy">{{catchcopy}}</h1>
     
     
     <div class="keyword_base">
@@ -25,13 +14,13 @@
             <img src="{{image}}" alt="イメージ画像" class="image">
         
             <div class="keyword"> 
-                <p class="name_space">{{name}}name</p>
+                <p class="name_space">{{name}}</p>
             
                 <p class="">キーワードで検索！！</p>
                 <ul>
-                    <li>{{keyword1}}keyword1</li>
-                    <li>{{keyword2}}keyword2</li>
-                    <li>{{keyword3}}keyword3</li>
+                    <li>{{keyword1}}</li>
+                    <li>{{keyword2}}</li>
+                    <li>{{keyword3}}</li>
                 </ul>
             </div>
         </div>
