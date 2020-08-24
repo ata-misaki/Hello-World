@@ -25,10 +25,11 @@ def music_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    c.execute("select name from category where id == 1 ")
-    name = c.fetchone()
-    name = name[0]
-    return render_template("content1.html", contents_list = contents_list)
+    c.execute("select name,category from category where id == 1 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
 @app.route("/art_con")
@@ -39,11 +40,11 @@ def art_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    
-    c.execute("select name from category where id == 2 ")
-    name = c.fetchone()
-    name = name[0]
-    return render_template("content1.html", contents_list = contents_list , name = name)
+    c.execute("select name,category from category where id == 2 ")
+    cate = c.fetchone()
+    name = cate[0]
+    img = cate[1]
+    return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
 @app.route("/sport_con")
