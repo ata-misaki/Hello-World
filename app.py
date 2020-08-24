@@ -43,8 +43,6 @@ def art_con():
     c.execute("select name from category where id == 2 ")
     name = c.fetchone()
     name = name[0]
-    print(name)
-    print(contents_list)
     return render_template("content1.html", contents_list = contents_list , name = name)
 
 
