@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<p>Art add</p>
+<p>Nature add</p>
 <form action="/add/nature" method="post">
     <p>キャッチコピー</p>
     <input type="text" maxlength="100" name = "catchcopy">
@@ -13,9 +13,11 @@
     <input type="text" maxlength="100" name = "keyword2">
     <p>キーワード3</p>
     <input type="text" maxlength="100" name = "keyword3">
+    
+
+    <!-- 画像アップデートとプレビューをどうするか -->
     <p>画像</p>
     <input type="text" maxlength="100" name = "image">
-  
     <br>
     <br>
     <input type="submit" name="save" value="追加">

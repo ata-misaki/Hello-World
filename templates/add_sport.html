@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 
-<p>Art add</p>
-<form action="/add/art" method="post">
+<p>sport add</p>
+<form action="/add/sport" method="post">
     <p>キャッチコピー</p>
     <input type="text" maxlength="100" name = "catchcopy">
     <p>名前</p>
@@ -17,9 +16,9 @@
     <p>キーワード3</p>
     <input type="text" maxlength="100" name = "keyword3">
     
-    <!-- 画像アップデートとプレビューをどうするか -->  
+    <!-- 画像アップデートとプレビューをどうするか -->
     <p>画像</p>
-    <input type="text" name="image"> 
+    <input type="file" name="image"> 
     <img style="width:100px">
     <br>
     <br>

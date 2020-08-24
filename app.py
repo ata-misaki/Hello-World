@@ -108,36 +108,8 @@ def add_post():
         return redirect("/login")
 
 
-#art_追加
-@app.route("/add/art", methods = ["GET"])
-def add_art_get():
-    if 'manager_id' in session:
-        return render_template("add_art.html")
-    else:
-        return redirect("/login")
-
-@app.route("/add/art", methods = ["POST"])
-def add_art_post():
-    if 'manager_id' in session:
-        manager_id = session['manager_id']
-        catchcopy = request.form.get("catchcopy")
-        name = request.form.get("name")
-        image = request.form.get("image")
-        keyword1 = request.form.get("keyword1")
-        keyword2 = request.form.get("keyword2")
-        keyword3 = request.form.get("keyword3")
-        print()
-        conn = sqlite3.connect('team3.db')
-        c = conn.cursor()
-        c.execute("INSERT into art values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
-        conn.commit()
-        c.close()
-        return redirect("/list")
-    else:
-        return redirect("/login")
-
-
-# nature追加
+        
+#nature追加
 @app.route("/add/nature", methods = ["GET"])
 def add_nature_get():
     if 'manager_id' in session:
@@ -166,40 +138,153 @@ def add_nature_post():
         return redirect("/login")
 
 
-
-#課題の回答からとってきたもの 画像アップどうしたらええんや・・・・
-@app.route('/upload', methods=["POST"])
-def do_upload():
-    # bbs.tplのinputタグ name="upload" をgetしてくる
-    upload = request.files['upload']
-    # uploadで取得したファイル名をlower()で全部小文字にして、ファイルの最後尾の拡張子が'.png', '.jpg', '.jpeg'ではない場合、returnさせる。
-    if not upload.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
-        return 'png,jpg,jpeg形式のファイルを選択してください'
-    
-    # 下の def get_save_path()関数を使用して "./static/img/" パスを戻り値として取得する。
-    save_path = get_save_path()
-    # パスが取得できているか確認
-    print(save_path)
-    # ファイルネームをfilename変数に代入
-    filename = upload.filename
-    # 画像ファイルを./static/imgフォルダに保存。 os.path.join()は、パスとファイル名をつないで返してくれます。
-    upload.save(os.path.join(save_path,filename))
-    # ファイル名が取れることを確認、あとで使うよ
-    print(filename)
-    
-    # アップロードしたユーザのIDを取得
-    # user_id = session['user_id']
-    # conn = sqlite3.connect('team3.db')
-    c = conn.cursor()
-    # update文
-    # 上記の filename 変数ここで使うよ
-    c.execute("update user set prof_img = ? where id=?", (filename,user_id))
-    conn.commit()
-    conn.close()
-
-    return redirect ('/add')
+# art_追加
+@app.route("/add/art", methods = ["GET"])
+def add_art_get():
+    if 'manager_id' in session:
+        return render_template("add_art.html")
+    else:
+        return redirect("/login")
+@app.route("/add/art", methods = ["POST"])
+def add_art_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into art values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
 
 
+
+
+#music追加
+@app.route("/add/music", methods = ["GET"])
+def add_music_get():
+    if 'manager_id' in session:
+        return render_template("add_music.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/music", methods = ["POST"])
+def add_music_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into music values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+#sport追加
+@app.route("/add/sport", methods = ["GET"])
+def add_sport_get():
+    if 'manager_id' in session:
+        return render_template("add_sport.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/sport", methods = ["POST"])
+def add_sport_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into sport values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+#trip追加
+@app.route("/add/trip", methods = ["GET"])
+def add_trip_get():
+    if 'manager_id' in session:
+        return render_template("add_trip.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/trip", methods = ["POST"])
+def add_trip_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into trip values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+#fashion追加
+@app.route("/add/fashion", methods = ["GET"])
+def add_fashion_get():
+    if 'manager_id' in session:
+        return render_template("add_fashion.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/fashion", methods = ["POST"])
+def add_fashion_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        print()
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into fashion values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+
+
+# 編集コーナー
 @app.route('/edit/<int:id>')
 def edit(id):
     if 'manager_id' in session:
