@@ -129,4 +129,15 @@ ul li, ol li {
     color: #fff;
 }
 
+h3 {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.google_link {
+    color: #DB1C29;
+}
+
 }
