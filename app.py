@@ -25,7 +25,7 @@ def music_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    c.ececute("select name from category id = 1 ")
+    c.execute("select name from category where id == 1 ")
     name = c.fetchone()
     name = name[0]
     return render_template("content1.html", contents_list = contents_list)
@@ -39,10 +39,13 @@ def art_con():
     contents_list = []
     for row in c.fetchall():
         contents_list.append({"category":row[0],"id":row[1],"catchcopy":row[2]})
-    c.ececute("select name from category id = 2 ")
+    
+    c.execute("select name from category where id == 2 ")
     name = c.fetchone()
     name = name[0]
-    return render_template("content1.html", contents_list = contents_list,name = name)
+    print(name)
+    print(contents_list)
+    return render_template("content1.html", contents_list = contents_list , name = name)
 
 
 @app.route("/sport_con")
