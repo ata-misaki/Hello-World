@@ -446,6 +446,8 @@ def nature_edit(id):
         keyword3 = nature_item[7]
         print(nature_item)
         conn.close()
+        nature_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
+
         return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
     else:
         return redirect("/login")
@@ -453,19 +455,17 @@ def nature_edit(id):
 @app.route("/edit/nature",methods=["POST"])
 def update_nature():
     if 'manager_id' in session:
+        id = request.form.get("id") #htmlでとったid取得 
         name = request.form.get("name")
         catchcopy = request.form.get("catchcopy")
         keyword1 = request.form.get("keyword1")
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        print(name)
-        print(catchcopy)
-        print(image)
         category_name = "nature"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("UPDATE nature set name = ?  ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(id,name,image,catchcopy,keyword1,keyword2,keyword3))
+        c.execute("UPDATE nature set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
         conn.commit()
         c.close()
         return redirect("/list")
