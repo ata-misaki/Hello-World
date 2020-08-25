@@ -29,11 +29,12 @@ p a span {
 .top_image .small {
     position: absolute;
     color: white;
-    top: 30%;
+    top: 35%;
     left: 50%;
     font-size: 60px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     transform: translate(-50%,-50%);
+    margin: 0px;
 }
 .image1 {
     width: 100%;

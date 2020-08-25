@@ -13,15 +13,15 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 .content_image {
     width: 100%;
-    height: 700px;
+    height: 600px;
     position: relative;
 }
 .image {
-    width: 50%;
+    width: 80%;
     object-fit: cover;
     position: absolute;
     top: 300px;
-    left: 25%;
+    left: 10%;
 }
 
 .content_image .title{
@@ -42,12 +42,13 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 .content_item{
     background: white;
-    margin: 150px 0 100px 0;
+    margin: 30px 0 40px 0;
     list-style: none;
     border-radius: 20px;
-    width: 50%;
+    width: 80%;
     text-align: center;
     left: 25%;
+    margin: 0 0 80px 0;
 }
 .item a:hover {
     background-color: rgb(255, 242, 191);
@@ -62,5 +63,5 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     text-decoration: none;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     color: black;
-    padding: 20px;
+    padding: 10px;
   }

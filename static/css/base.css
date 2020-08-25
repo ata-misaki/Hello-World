@@ -34,7 +34,7 @@ footer {
 footer p {
     display: inline-block;
     font-size: 30px;
-    font-family: A-OTF 太ゴB101 Pr6N;
+    /* font-family: A-OTF 太ゴB101 Pr6N; */
     font-weight: bold;
     height: 60px;
     /* margin: 0px;
@@ -63,5 +63,6 @@ footer p {
       box-shadow: 0 2px 0 #0078BD;
   }
   .twitter:hover {
-    background-color: #1397D8;
+    width: 430px;
+    height: 110px;
     /* base.htmlここまで */
