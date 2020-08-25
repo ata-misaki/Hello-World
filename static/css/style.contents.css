@@ -24,11 +24,15 @@ h1 {
     justify-content: center; */
     margin-left: auto;
     margin-right: auto;
+    font-size: 50px;
 }
 
 .image {
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .contents_main {
@@ -38,6 +42,7 @@ h1 {
     display: flex;
     position: relative;
     justify-content: center;
+    /* vertical-align: middle; */
 }
 
 .keyword_base{
@@ -49,7 +54,10 @@ h1 {
 .keyword {
     text-align: left;
     color: #fff;
-    display: inline-table;
+    /* display: inline-table; */
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 35px;
 }
 
 ul, ol {
@@ -74,6 +82,7 @@ ul li, ol li {
     padding: 5%;
     text-align: center;
     font-size: x-large;
+    margin: 0;
 }
 
 .keyword_g {
@@ -110,7 +119,9 @@ ul li, ol li {
     text-align: center;
     text-decoration: none;
     border-radius: 20px; 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 20px;
     /* margin-top: 2%;
     margin-bottom: 2%; */

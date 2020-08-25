@@ -23,11 +23,16 @@ h1 {
     justify-content: center; */
     margin-left: auto;
     margin-right: auto;
+    font-size: 35px;
 }
 
 .image {
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+
 }
 
 .contents_main {
@@ -48,7 +53,11 @@ h1 {
 .keyword {
     text-align: left;
     color: #fff;
-    display: inline-table;
+    /* display: inline-table; */
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 20px;
+
 }
 
 ul, ol {
@@ -59,8 +68,9 @@ ul, ol {
   }
 
 ul li, ol li {
-    line-height: 1.5; /*文の行高*/
+    line-height: 1; /*文の行高*/
     padding: 0.5em 0; /*前後の文との余白*/
+    font-size: x-small;
   }
 
 
@@ -73,11 +83,12 @@ ul li, ol li {
     text-align: center;
     padding: 3%;
     font-size: small;
+    margin: 0;
 }
 
 .keyword_g {
     padding-top: 5%;
-    font-size: x-small;
+    font-size: small;
 }
 
 .fixed_base {
@@ -96,21 +107,24 @@ ul li, ol li {
     /* position: absolute;
     bottom: 5px; */
     text-align: center;
+    font-size: 16px;
 }
 
 .top_return {
-    width: 250px;
-    height: 50px;
-    line-height: 50px;
+    width: 180px;
+    height: 35px;
+    line-height: 40px;
     background-color: #A61010;
-    box-shadow: 0 5px 0 #FEACAC;
+    box-shadow: 0 3px 0 #FEACAC;
     font-family: A-OTF 太ゴB101 Pr6N;
-    font-size: 25px;
+    font-size: 13px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     border-radius: 20px; 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 20px;
     /* margin-top: 2%;
     margin-bottom: 2%; */
@@ -119,10 +133,10 @@ ul li, ol li {
     /* transform: translate(-50%, -50%); */
     /* margin-right: auto;
     /* margin-left: auto; */
-    left: 50%;
+    /* left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%); */ */
+    -ms-transform: translateX(-50%);  */
 }
 
 .top_return:active {
