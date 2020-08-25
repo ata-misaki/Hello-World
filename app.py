@@ -35,10 +35,10 @@ def testlist():
         for row in c.fetchall():
             art_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
   
-        c.execute("SELECT *  FROM sport") 
-        sport_list = []
+        c.execute("SELECT *  FROM sports") 
+        sports_list = []
         for row in c.fetchall():
-            sport_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})   
+            sports_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})   
 
         c.execute("SELECT *  FROM trip") 
         trip_list = []
@@ -50,10 +50,10 @@ def testlist():
         for row in c.fetchall():
             fashion_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
 
-        c.execute("SELECT *  FROM foods") 
-        foods_list = []
+        c.execute("SELECT *  FROM food") 
+        food_list = []
         for row in c.fetchall():
-            foods_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+            food_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
 
         c.execute("SELECT *  FROM life") 
         life_list = []
@@ -75,7 +75,7 @@ def testlist():
         for row in c.fetchall():
             ride_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
         c.close()     
-        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list, sport_list=sport_list, trip_list=trip_list, fashion_list=fashion_list, foods_list=foods_list, life_list=life_list, medical_list=medical_list, history_list=history_list, ride_list=ride_list)
+        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list, sports_list=sport_list, trip_list=trip_list, fashion_list=fashion_list, food_list=food_list, life_list=life_list, medical_list=medical_list, history_list=history_list, ride_list=ride_list)
     else:
         return redirect("/login")
 
@@ -197,16 +197,16 @@ def add_music_post():
         return redirect("/login")
 
 
-#sport追加
-@app.route("/add/sport", methods = ["GET"])
-def add_sport_get():
+#sports追加
+@app.route("/add/sports", methods = ["GET"])
+def add_sports_get():
     if 'manager_id' in session:
-        return render_template("add_sport.html")
+        return render_template("add_sports.html")
     else:
         return redirect("/login")
 
-@app.route("/add/sport", methods = ["POST"])
-def add_sport_post():
+@app.route("/add/sports", methods = ["POST"])
+def add_sports_post():
     if 'manager_id' in session:
         manager_id = session['manager_id']
         catchcopy = request.form.get("catchcopy")
@@ -218,7 +218,7 @@ def add_sport_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into sport values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into sports values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -283,16 +283,16 @@ def add_fashion_post():
         return redirect("/login")
 
 
-#foods追加
-@app.route("/add/foods", methods = ["GET"])
-def add_foods_get():
+#food追加
+@app.route("/add/food", methods = ["GET"])
+def add_food_get():
     if 'manager_id' in session:
-        return render_template("add_foods.html")
+        return render_template("add_food.html")
     else:
         return redirect("/login")
 
-@app.route("/add/foods", methods = ["POST"])
-def add_foods_post():
+@app.route("/add/food", methods = ["POST"])
+def add_food_post():
     if 'manager_id' in session:
         manager_id = session['manager_id']
         catchcopy = request.form.get("catchcopy")
@@ -304,7 +304,7 @@ def add_foods_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into foods values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into food values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -444,10 +444,8 @@ def nature_edit(id):
         keyword1 = nature_item[5]
         keyword2 = nature_item[6]
         keyword3 = nature_item[7]
-        print(nature_item)
         conn.close()
         nature_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-
         return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
     else:
         return redirect("/login")

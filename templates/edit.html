@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<form action="/edit/nature" method="post">
+<form action="/edit/{{category_name}}" method="post">
     <input type="hidden" value="{{id}}" name="id">
     <input type="text" value="{{catchcopy}}" name="catchcopy">
     <input type="text" value="{{name}}" name="name">
