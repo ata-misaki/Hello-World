@@ -434,11 +434,8 @@ def nature_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT * FROM nature WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM nature WHERE id = ?",(id,))
         nature_item = c.fetchone()
-        conn.close()
-        # if nature_item is not None:
-            
         id= nature_item[0]
         category_name=nature_item[1]
         catchcopy = nature_item[2]
@@ -447,26 +444,28 @@ def nature_edit(id):
         keyword1 = nature_item[5]
         keyword2 = nature_item[6]
         keyword3 = nature_item[7]
-        # else:
-        #     return "アイテムがありません"
-
-        # nature_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3}
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3)
+        print(nature_item)
+        conn.close()
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
     else:
         return redirect("/login")
 
-@app.route("/edit",methods=["POST"])
-def update_task():
+@app.route("/edit/nature",methods=["POST"])
+def update_nature():
     if 'manager_id' in session:
         name = request.form.get("name")
         catchcopy = request.form.get("catchcopy")
         keyword1 = request.form.get("keyword1")
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
-  
+        image = request.form.get("image")
+        print(name)
+        print(catchcopy)
+        print(image)
+        category_name = "nature"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("UPDATE art set name = ? ,category = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?, where id = ?",(name,category,keyword1,keyword2,keyword3))
+        c.execute("UPDATE nature set name = ?  ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(id,name,image,catchcopy,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -474,23 +473,41 @@ def update_task():
         return redirect("/login")
 
 
-
-# 削除
-@app.route('/del/<int:id>')
-def del_task(id):
+# nature削除
+@app.route('/del/nature/<int:id>')
+def del_nature(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("DELETE FROM art WHERE id = ?",(id,))
-        c.execute("DELETE FROM music WHERE id = ?",(id,))
+        c.execute("DELETE FROM nature WHERE id = ?",(id,))
         conn.commit()
         conn.close()
         return redirect("/list")
     else:
         return redirect("/login")
 
+
+
+# music削除
+@app.route('/del/music/<int:id>')
+def del_music(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM music WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+      
+      
+        # c.execute("DELETE FROM music WHERE id = ?",(id,))
     # fetchone:sqlを描いた時点では操作は完了していない.fetchoneで情報を1つだけ取る.全部ならfetchall
     # commit:変更を確定.DBへの操作を確定する
+
+
+
 
 @app.route('/regist')
 def regist_get():

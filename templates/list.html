@@ -26,16 +26,16 @@
 <!-- 音楽-->
 <p>music</p>
 <table border = "1">
-    {% for item in music_list %}   
+    {% for music_item in music_list %}   
     <tr>      
-        <td>{{item["catchcopy"]}}</td>
-        <td>{{item["name"]}}</td>
-        <td>{{item["keyword1"]}}</td>
-        <td>{{item["keyword2"]}}</td>
-        <td>{{item["keyword3"]}}</td>
-        <td>{{item["image"]}}</td>
-        <td><a href="/edit/{{item['id']}}">編集</a></td>
-        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td>{{music_item["catchcopy"]}}</td>
+        <td>{{music_item["name"]}}</td>
+        <td>{{music_item["keyword1"]}}</td>
+        <td>{{music_item["keyword2"]}}</td>
+        <td>{{music_item["keyword3"]}}</td>
+        <td>{{music_item["image"]}}</td>
+        <td><a href="/edit/{{music_item['id']}}">編集</a></td>
+        <td><a href="/del/{{music_item['id']}}">削除</a></td>
     </tr>
     {% endfor %}
 </table>
