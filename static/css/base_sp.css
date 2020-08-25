@@ -36,8 +36,8 @@ footer {
 
 footer p {
     display: inline-block;
-    font-size: 20px;
-    font-family: A-OTF 太ゴB101 Pr6N;
+    font-size: 15px;
+    /* font-family: A-OTF 太ゴB101 Pr6N; */
     font-weight: bold;
     height: 60px;
 }
