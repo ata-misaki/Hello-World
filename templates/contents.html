@@ -9,22 +9,25 @@
     <h1 class="catchcopy">{{catchcopy}}</h1>
     
     
-    <div class="keyword_base">
+    <!-- <div class="keyword_base"> -->
         <div class="contents_main">
-            <img src="{{image}}" alt="イメージ画像" class="image">
-        
+            <div class="image_block">
+                <img src="{{image}}" alt="イメージ画像" class="image">
+            </div>
             <div class="keyword"> 
                 <p class="name_space">{{name}}</p>
-            
-                <p class="keyword_g">キーワードで検索！！</p>
-                <ul>
-                    <li>{{keyword1}}</li>
-                    <li>{{keyword2}}</li>
-                    <li>{{keyword3}}</li>
-                </ul>
+                <div class="keyword_block">
+                    <p class="keyword_g">キーワードで検索！！</p>
+                    <ul>
+                        <li>{{keyword1}}</li>
+                        <li>{{keyword2}}</li>
+                        <li>{{keyword3}}</li>
+                    </ul>
+                </div>
+                
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
     <div class="fixed_base">
         <h2 class="fixed_word">え？気になる？　じゃー、<a href="https://www.google.com/" class="google_link">Google</a>検索してみてね！</h2>

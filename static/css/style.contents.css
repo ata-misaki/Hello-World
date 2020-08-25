@@ -19,20 +19,34 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 h1 {
     color: #fff;
     text-align: center;
-    padding: 25px;
+    padding: 50px 50px 35px 35px;
     /* display: flex;
     justify-content: center; */
     margin-left: auto;
     margin-right: auto;
-    font-size: 50px;
+    font-size: 40px;
 }
 
-.image {
+.image_block {
     width: 40%;
-    height: 40%;
+    position: relative;
+}
+.image {
+    width: 50%;
+    text-align: center;
+    /* height: 40%; */
     vertical-align: middle;
     margin-top: auto;
     margin-bottom: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    max-height: 100%;
+    height/***/: auto;
+    width/***/:auto;
+    
 }
 
 .contents_main {
@@ -57,7 +71,7 @@ h1 {
     /* display: inline-table; */
     display: inline-block;
     vertical-align: middle;
-    padding-left: 35px;
+    padding-left: 45px;
 }
 
 ul, ol {
@@ -105,6 +119,7 @@ ul li, ol li {
     /* position: absolute;
     bottom: 5px; */
     text-align: center;
+    font-size: 35px;
 }
 
 .top_return {
@@ -123,6 +138,7 @@ ul li, ol li {
     flex-direction: column;
     justify-content: center;
     margin: 20px;
+    margin-bottom: 7%;
     /* margin-top: 2%;
     margin-bottom: 2%; */
     /* position: absolute; */
