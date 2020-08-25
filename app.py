@@ -29,6 +29,7 @@ def music_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -44,6 +45,7 @@ def art_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -59,6 +61,7 @@ def sport_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 @app.route("/play_con")
@@ -73,6 +76,7 @@ def play_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -89,6 +93,7 @@ def life_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -106,6 +111,7 @@ def foods_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -122,6 +128,7 @@ def trip_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -138,6 +145,7 @@ def nature_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -154,6 +162,7 @@ def fashion_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -170,6 +179,7 @@ def ride_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -186,6 +196,7 @@ def history_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
@@ -202,6 +213,7 @@ def medical_con():
     cate = c.fetchone()
     name = cate[0]
     img = cate[1]
+    conn.close()
     return render_template("content1.html", contents_list = contents_list, name = name , img = img)
 
 
