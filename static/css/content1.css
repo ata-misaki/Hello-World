@@ -5,7 +5,10 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 .container {
     width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #010103;
 }
 .content_image {
@@ -25,16 +28,21 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     position: absolute;
     color: white;
     top: 15%;
-    font-size: 70px;
+    font-size: 80px;
     font-family: A-OTF 太ゴB101 Pr6N;
     width: 100%;
     text-align: center;
     margin: 0%;
 }
-
+.content_image .title span {
+    color: white;
+    font-size: 50px;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    margin: 15px;
+}
 .content_item{
     background: white;
-    position:absolute;
+    margin: 150px 0 100px 0;
     list-style: none;
     border-radius: 20px;
     width: 50%;
