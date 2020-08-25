@@ -7,16 +7,16 @@
 <!-- 自然 -->
 <p>nature</p>
 <table border = "1">
-    {% for item in nature_list %}   
+    {% for nature_item in nature_list %}   
     <tr>      
-        <td>{{item["catchcopy"]}}</td>
-        <td>{{item["name"]}}</td>
-        <td>{{item["keyword1"]}}</td>
-        <td>{{item["keyword2"]}}</td>
-        <td>{{item["keyword3"]}}</td>
-        <td>{{item["image"]}}</td>
-        <td><a href="/edit/nature/{{item['id']}}">編集</a></td>
-        <td><a href="/del/{{item['id']}}">削除</a></td>
+        <td>{{nature_item["catchcopy"]}}</td>
+        <td>{{nature_item["name"]}}</td>
+        <td>{{nature_item["keyword1"]}}</td>
+        <td>{{nature_item["keyword2"]}}</td>
+        <td>{{nature_item["keyword3"]}}</td>
+        <td>{{nature_item["image"]}}</td>
+        <td><a href="/edit/nature/{{nature_item['id']}}">編集</a></td>
+        <td><a href="/del/nature/{{nature_item['id']}}">削除</a></td>
     </tr>
     {% endfor %}
 </table>
