@@ -189,7 +189,7 @@ def add_music_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into music values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into music values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -218,7 +218,7 @@ def add_sports_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into sports values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into sports values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -246,7 +246,7 @@ def add_trip_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into trip values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into trip values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -275,7 +275,7 @@ def add_fashion_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into fashion values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into fashion values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -304,7 +304,7 @@ def add_food_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into food values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into food values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -333,7 +333,7 @@ def add_life_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into life values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into life values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -362,7 +362,7 @@ def add_medical_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into medical values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into medical values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -391,7 +391,7 @@ def add_history_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into history values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into history values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -420,7 +420,7 @@ def add_ride_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into ride values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into ride values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -514,13 +514,13 @@ def update_music():
     else:
         return redirect("/login")
 
-# art編集
+# art edit
 @app.route('/edit/art/<int:id>')
 def art_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM art WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM art WHERE id = ?",(id,))
         art_item = c.fetchone()
         id= art_item[0]
         category_name=art_item[1]
@@ -530,9 +530,10 @@ def art_edit(id):
         keyword1 = art_item[5]
         keyword2 = art_item[6]
         keyword3 = art_item[7]
+        category = art_item[8]
         conn.close()
-        art_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        art_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -546,7 +547,7 @@ def update_art():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "art"
+        category_name = "芸術"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE art set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
@@ -557,13 +558,13 @@ def update_art():
         return redirect("/login")
 
 
-#sports 編集
+#sports edit
 @app.route('/edit/sports/<int:id>')
 def sports_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM sports WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM sports WHERE id = ?",(id,))
         sports_item = c.fetchone()
         id= sports_item[0]
         category_name=sports_item[1]
@@ -573,9 +574,10 @@ def sports_edit(id):
         keyword1 = sports_item[5]
         keyword2 = sports_item[6]
         keyword3 = sports_item[7]
+        category = sports_item[8]
         conn.close()
-        sports_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        sports_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -589,7 +591,7 @@ def update_sports():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "sports"
+        category_name = "スポーツ"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE sports set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
@@ -599,13 +601,13 @@ def update_sports():
     else:
         return redirect("/login")
 
-#trip
+#trip edit
 @app.route('/edit/trip/<int:id>')
 def trip_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM trip WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM trip WHERE id = ?",(id,))
         trip_item = c.fetchone()
         id= trip_item[0]
         category_name=trip_item[1]
@@ -615,9 +617,10 @@ def trip_edit(id):
         keyword1 = trip_item[5]
         keyword2 = trip_item[6]
         keyword3 = trip_item[7]
+        category = trip_item[8]
         conn.close()
-        trip_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        trip_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -641,13 +644,13 @@ def update_trip():
     else:
         return redirect("/login")
 
-# fashion変更
+# fashion edit
 @app.route('/edit/fashion/<int:id>')
 def fashion_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM fashion WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM fashion WHERE id = ?",(id,))
         fashion_item = c.fetchone()
         id= fashion_item[0]
         category_name=fashion_item[1]
@@ -657,9 +660,10 @@ def fashion_edit(id):
         keyword1 = fashion_item[5]
         keyword2 = fashion_item[6]
         keyword3 = fashion_item[7]
+        category = fashion_item[8]
         conn.close()
-        fashion_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        fashion_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -673,7 +677,7 @@ def update_fashion():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "fashion"
+        category_name = "美容・ファッション"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE fashion set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
@@ -690,7 +694,7 @@ def food_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM food WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM food WHERE id = ?",(id,))
         food_item = c.fetchone()
         id= food_item[0]
         category_name=food_item[1]
@@ -700,9 +704,10 @@ def food_edit(id):
         keyword1 = food_item[5]
         keyword2 = food_item[6]
         keyword3 = food_item[7]
+        category = food_item[8]
         conn.close()
-        food_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        food_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -732,7 +737,7 @@ def life_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM life WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM life WHERE id = ?",(id,))
         life_item = c.fetchone()
         id= life_item[0]
         category_name=life_item[1]
@@ -742,9 +747,10 @@ def life_edit(id):
         keyword1 = life_item[5]
         keyword2 = life_item[6]
         keyword3 = life_item[7]
+        category = life_item[8]
         conn.close()
-        life_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        life_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -758,7 +764,7 @@ def update_life():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "life"
+        category_name = "暮らし"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE life set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
@@ -774,7 +780,7 @@ def medical_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM medical WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM medical WHERE id = ?",(id,))
         medical_item = c.fetchone()
         id= medical_item[0]
         category_name=medical_item[1]
@@ -784,9 +790,10 @@ def medical_edit(id):
         keyword1 = medical_item[5]
         keyword2 = medical_item[6]
         keyword3 = medical_item[7]
+        category = medical_item[8]
         conn.close()
-        medical_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        medical_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3,"category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -826,9 +833,10 @@ def history_edit(id):
         keyword1 = history_item[5]
         keyword2 = history_item[6]
         keyword3 = history_item[7]
+        category = history_item[8]
         conn.close()
-        history_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        history_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -842,7 +850,7 @@ def update_history():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "history"
+        category_name = "歴史"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE history set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
@@ -858,7 +866,7 @@ def ride_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM ride WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM ride WHERE id = ?",(id,))
         ride_item = c.fetchone()
         id= ride_item[0]
         category_name=ride_item[1]
@@ -868,9 +876,10 @@ def ride_edit(id):
         keyword1 = ride_item[5]
         keyword2 = ride_item[6]
         keyword3 = ride_item[7]
+        category = ride_item[8]
         conn.close()
-        ride_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        ride_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3,"category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -884,7 +893,7 @@ def update_ride():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "ride"
+        category_name = "乗り物"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE ride set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
@@ -923,14 +932,8 @@ def del_music(id):
     else:
         return redirect("/login")
       
-      
-        # c.execute("DELETE FROM music WHERE id = ?",(id,))
-    # fetchone:sqlを描いた時点では操作は完了していない.fetchoneで情報を1つだけ取る.全部ならfetchall
-    # commit:変更を確定.DBへの操作を確定する
 
-
-
-
+#管理者登録（ちょっといまは勘弁してください・・・）
 @app.route('/regist')
 def regist_get():
     return render_template("regist.html")
@@ -978,7 +981,7 @@ def logout():
 
 @app.errorhandler(404)
 def not_found(code):
-    return "ページないですよ"
+    return "ページはないですよ"
 
 
 if __name__ == "__main__":
