@@ -13,14 +13,14 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 .content_image {
     width: 100%;
-    height: 600px;
+    height: 500px;
     position: relative;
 }
 .image {
     width: 80%;
     object-fit: cover;
     position: absolute;
-    top: 300px;
+    top: 40%;
     left: 10%;
 }
 
@@ -28,7 +28,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     position: absolute;
     color: white;
     top: 15%;
-    font-size: 80px;
+    font-size: 40px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     width: 100%;
     text-align: center;
@@ -36,9 +36,9 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 }
 .content_image .title span {
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
-    margin: 15px;
+   
 }
 .content_item{
     background: white;
