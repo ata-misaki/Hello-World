@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
-<form action="/add" method="post">
+<form action="/add/{{category}}" method="post">
+    <p>{{category_name}}</p>
     <p>キャッチコピー</p>
     <input type="text" maxlength="100" name = "catchcopy">
     <p>名前</p>
@@ -12,7 +13,7 @@
     <input type="text" maxlength="100" name = "keyword2">
     <p>キーワード3</p>
     <input type="text" maxlength="100" name = "keyword3">
-    <!-- <img alt="" class="prof_img"> -->
+    
     <p>画像の選択</p>
     <input type="text" name="image" > 
     <br>

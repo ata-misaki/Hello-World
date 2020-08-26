@@ -80,32 +80,32 @@ def testlist():
         return redirect("/login")
 
 #追加
-@app.route("/add", methods = ["GET"])
-def add_get():
-    if 'manager_id' in session:
-        return render_template("add.html")
-    else:
-        return redirect("/login")
+# @app.route("/add", methods = ["GET"])
+# def add_get():
+#     if 'manager_id' in session:
+#         return render_template("add.html")
+#     else:
+#         return redirect("/login")
 
-@app.route("/add", methods = ["POST"])
-def add_post():
-    if 'manager_id' in session:
-        manager_id = session['manager_id']
-        catchcopy = request.form.get("catchcopy")
-        name = request.form.get("name")
-        image = request.form.get("image")
-        keyword1 = request.form.get("keyword1")
-        keyword2 = request.form.get("keyword2")
-        keyword3 = request.form.get("keyword3")
-        print()
-        conn = sqlite3.connect('team3.db')
-        c = conn.cursor()
-        c.execute("INSERT into art values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
-        conn.commit()
-        c.close()
-        return redirect("/list")
-    else:
-        return redirect("/login")
+# @app.route("/add", methods = ["POST"])
+# def add_post():
+#     if 'manager_id' in session:
+#         manager_id = session['manager_id']
+#         catchcopy = request.form.get("catchcopy")
+#         name = request.form.get("name")
+#         image = request.form.get("image")
+#         keyword1 = request.form.get("keyword1")
+#         keyword2 = request.form.get("keyword2")
+#         keyword3 = request.form.get("keyword3")
+#         print()
+#         conn = sqlite3.connect('team3.db')
+#         c = conn.cursor()
+#         c.execute("INSERT into art values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+#         conn.commit()
+#         c.close()
+#         return redirect("/list")
+#     else:
+#         return redirect("/login")
 
 
         
@@ -129,7 +129,7 @@ def add_nature_post():
         keyword3 = request.form.get("keyword3")
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into nature values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into nature values(null,'自然',?,?,?,?,?,?,'nature')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -158,7 +158,7 @@ def add_art_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into art values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into art values(null,'芸術',?,?,?,?,?,?,'art')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -186,10 +186,9 @@ def add_music_post():
         keyword1 = request.form.get("keyword1")
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
-        print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into music values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into music values(null,'音楽',?,?,?,?,?,?,'music')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -218,7 +217,7 @@ def add_sports_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into sports values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into sports values(null,'スポーツ',?,?,?,?,?,?,'sports')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -243,10 +242,9 @@ def add_trip_post():
         keyword1 = request.form.get("keyword1")
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
-        print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into trip values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into trip values(null,'旅',?,?,?,?,?,?,'trip')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -275,7 +273,7 @@ def add_fashion_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into fashion values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into fashion values(null,'美容・ファッション',?,?,?,?,?,?,'fashion')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -304,7 +302,7 @@ def add_food_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into food values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into food values(null,'食',?,?,?,?,?,?,'food')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -333,7 +331,7 @@ def add_life_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into life values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into life values(null,'暮らし',?,?,?,?,?,?,'life')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -362,7 +360,7 @@ def add_medical_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into medical values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into medical values(null,'医療',?,?,?,?,?,?,'medical')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -391,7 +389,7 @@ def add_history_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into history values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into history values(null,'歴史',?,?,?,?,?,?,'history')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -420,7 +418,7 @@ def add_ride_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into ride values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into ride values(null,'乗り物',?,?,?,?,?,?,'ride')",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -429,6 +427,7 @@ def add_ride_post():
 
 
 # 編集コーナー
+# nature edit
 @app.route('/edit/nature/<int:id>')
 def nature_edit(id):
     if 'manager_id' in session:
