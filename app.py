@@ -127,10 +127,9 @@ def add_nature_post():
         keyword1 = request.form.get("keyword1")
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
-        print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into nature values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into nature values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -159,7 +158,7 @@ def add_art_post():
         print()
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("INSERT into art values(null,null,?,?,?,?,?,?)",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        c.execute("INSERT into art values(null,null,?,?,?,?,?,?,null)",(catchcopy,name,image,keyword1,keyword2,keyword3))
         conn.commit()
         c.close()
         return redirect("/list")
@@ -435,7 +434,7 @@ def nature_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM nature WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM nature WHERE id = ?",(id,))
         nature_item = c.fetchone()
         id= nature_item[0]
         category_name=nature_item[1]
@@ -445,9 +444,10 @@ def nature_edit(id):
         keyword1 = nature_item[5]
         keyword2 = nature_item[6]
         keyword3 = nature_item[7]
+        category = nature_item[8]
         conn.close()
-        nature_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        nature_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -461,23 +461,23 @@ def update_nature():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "nature"
+        category_name = "自然"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("UPDATE nature set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))
+        c.execute("UPDATE nature set catchcopy = ? , name = ? ,image = ?, keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(catchcopy,name,image,keyword1,keyword2,keyword3,id))
         conn.commit()
         c.close()
         return redirect("/list")
     else:
         return redirect("/login")
 
-
+# music edit
 @app.route('/edit/music/<int:id>')
 def music_edit(id):
     if 'manager_id' in session:
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
-        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3 FROM music WHERE id = ?",(id,))
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category from music WHERE id = ?",(id,))
         music_item = c.fetchone()
         id= music_item[0]
         category_name=music_item[1]
@@ -487,9 +487,10 @@ def music_edit(id):
         keyword1 = music_item[5]
         keyword2 = music_item[6]
         keyword3 = music_item[7]
+        category = music_item[8]
         conn.close()
-        music_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3} #辞書型をつくる
-        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3) 
+        music_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
     else:
         return redirect("/login")
 
@@ -503,7 +504,7 @@ def update_music():
         keyword2 = request.form.get("keyword2")
         keyword3 = request.form.get("keyword3")
         image = request.form.get("image")
-        category_name = "music"
+        category_name = "音楽"
         conn = sqlite3.connect('team3.db')
         c = conn.cursor()
         c.execute("UPDATE music set name = ? ,image = ?, catchcopy = ? , keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(name,image,catchcopy,keyword1,keyword2,keyword3,id))

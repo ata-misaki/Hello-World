@@ -50,9 +50,9 @@
         <td>{{art_item["keyword1"]}}</td>
         <td>{{art_item["keyword2"]}}</td>
         <td>{{art_item["keyword3"]}}</td>
-        <td>{{itart_itemem["image"]}}</td>
-        <td><a href="/edit/art/{{item['id']}}">編集</a></td>
-        <td><a href="/del/art/{{item['id']}}">削除</a></td>
+        <td>{{art_item["image"]}}</td>
+        <td><a href="/edit/art/{{art_item['id']}}">編集</a></td>
+        <td><a href="/del/art/{{art_item['id']}}">削除</a></td>
     </tr>
     {% endfor %}
 </table>
