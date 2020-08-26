@@ -184,3 +184,8 @@ h3 {
 .google_link {
     color: #DB1C29;
 }
+h3:hover{
+    width: 255px;
+    height: 53px;
+}
+
