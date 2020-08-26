@@ -21,6 +21,23 @@
 </table>
 <a href="/add/nature">追加</a>
 
+<!-- 娯楽 -->
+<p>play</p>
+<table border = "1">
+    {% for play_item in play_list %}   
+    <tr>      
+        <td>{{play_item["catchcopy"]}}</td>
+        <td>{{play_item["name"]}}</td>
+        <td>{{play_item["keyword1"]}}</td>
+        <td>{{play_item["keyword2"]}}</td>
+        <td>{{play_item["keyword3"]}}</td>
+        <td>{{play_item["image"]}}</td>
+        <td><a href="/edit/play/{{play_item['id']}}">編集</a></td>
+        <td><a href="/del/play/{{play_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add/play">追加</a>
 
 <!-- 音楽-->
 <p>music</p>

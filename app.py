@@ -19,11 +19,6 @@ def testlist():
         conn = sqlite3.connect('team3.db') #team3dbにコネクト
         c = conn.cursor()
         
-        # 自然
-        c.execute("SELECT *  FROM nature") 
-        nature_list = []
-        for row in c.fetchall():
-            nature_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
         # 音楽 
         c.execute("SELECT *  FROM music") 
         music_list = []
@@ -34,48 +29,60 @@ def testlist():
         art_list = []
         for row in c.fetchall():
             art_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
-  
+
         c.execute("SELECT *  FROM sports") 
         sports_list = []
         for row in c.fetchall():
             sports_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})   
 
-        c.execute("SELECT *  FROM trip") 
-        trip_list = []
+        c.execute("SELECT *  FROM play") 
+        play_list = []
         for row in c.fetchall():
-            trip_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
-
-        c.execute("SELECT *  FROM fashion") 
-        fashion_list = []
+            play_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+   
+        c.execute("SELECT *  FROM life") 
+        life_list = []
         for row in c.fetchall():
-            fashion_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+            life_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
 
         c.execute("SELECT *  FROM food") 
         food_list = []
         for row in c.fetchall():
             food_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
 
-        c.execute("SELECT *  FROM life") 
-        life_list = []
+        c.execute("SELECT *  FROM trip") 
+        trip_list = []
         for row in c.fetchall():
-            life_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+            trip_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+
+        c.execute("SELECT *  FROM nature") 
+        nature_list = []
+        for row in c.fetchall():
+            nature_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+    
+        c.execute("SELECT *  FROM fashion") 
+        fashion_list = []
+        for row in c.fetchall():
+            fashion_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
         
-        c.execute("SELECT *  FROM medical") 
-        medical_list = []
+        c.execute("SELECT *  FROM ride") 
+        ride_list = []
         for row in c.fetchall():
-            medical_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+            ride_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+        
 
         c.execute("SELECT *  FROM history") 
         history_list = []
         for row in c.fetchall():
             history_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
             
-        c.execute("SELECT *  FROM ride") 
-        ride_list = []
+        c.execute("SELECT *  FROM medical") 
+        medical_list = []
         for row in c.fetchall():
-            ride_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+            medical_list.append({"id":row[0],"category_id":row[1],"catchcopy":row[2],"name":row[3],"image":row[4],"keyword1":row[5],"keyword2":row[6],"keyword3":row[7]})  
+  
         c.close()     
-        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list, sports_list=sports_list, trip_list=trip_list, fashion_list=fashion_list, food_list=food_list, life_list=life_list, medical_list=medical_list, history_list=history_list, ride_list=ride_list)
+        return render_template("list.html", nature_list=nature_list, music_list=music_list, art_list=art_list, sports_list=sports_list, trip_list=trip_list, fashion_list=fashion_list, food_list=food_list, life_list=life_list, medical_list=medical_list, history_list=history_list, ride_list=ride_list,play_list=play_list)
     else:
         return redirect("/login")
 
@@ -136,6 +143,32 @@ def add_nature_post():
     else:
         return redirect("/login")
 
+#play追加
+@app.route("/add/play", methods = ["GET"])
+def add_play_get():
+    if 'manager_id' in session:
+        return render_template("add_play.html")
+    else:
+        return redirect("/login")
+
+@app.route("/add/play", methods = ["POST"])
+def add_play_post():
+    if 'manager_id' in session:
+        manager_id = session['manager_id']
+        catchcopy = request.form.get("catchcopy")
+        name = request.form.get("name")
+        image = request.form.get("image")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("INSERT into play values(null,'娯楽',?,?,?,?,?,?,'play')",(catchcopy,name,image,keyword1,keyword2,keyword3))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
 
 # art_追加
 @app.route("/add/art", methods = ["GET"])
@@ -469,6 +502,50 @@ def update_nature():
         return redirect("/list")
     else:
         return redirect("/login")
+
+# play edit
+@app.route('/edit/play/<int:id>')
+def play_edit(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("SELECT id,category_name,catchcopy,name,image,keyword1,keyword2,keyword3,category FROM play WHERE id = ?",(id,))
+        play_item = c.fetchone()
+        id= play_item[0]
+        category_name=play_item[1]
+        catchcopy = play_item[2]
+        name = play_item[3]
+        image = play_item[4]
+        keyword1 = play_item[5]
+        keyword2 = play_item[6]
+        keyword3 = play_item[7]
+        category = play_item[8]
+        conn.close()
+        play_item = {"id":id,"catchcopy":catchcopy,"name":name, "image":image, "keyword1":keyword1, "keyword2":keyword2, "keyword3":keyword3, "category":category} #辞書型をつくる
+        return render_template("edit.html", id = id, category_name = category_name, catchcopy = catchcopy, name = name, image =image, keyword1 = keyword1, keyword2= keyword2, keyword3=keyword3, category=category) 
+    else:
+        return redirect("/login")
+
+@app.route("/edit/play",methods=["POST"])
+def update_play():
+    if 'manager_id' in session:
+        id = request.form.get("id") #htmlでとったid取得 
+        name = request.form.get("name")
+        catchcopy = request.form.get("catchcopy")
+        keyword1 = request.form.get("keyword1")
+        keyword2 = request.form.get("keyword2")
+        keyword3 = request.form.get("keyword3")
+        image = request.form.get("image")
+        category_name = "娯楽"
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("UPDATE nature set catchcopy = ? , name = ? ,image = ?, keyword1 = ?, keyword2 = ?, keyword3 = ?  where id = ?",(catchcopy,name,image,keyword1,keyword2,keyword3,id))
+        conn.commit()
+        c.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
 
 # music edit
 @app.route('/edit/music/<int:id>')
@@ -903,21 +980,6 @@ def update_ride():
         return redirect("/login")
 
 
-# nature削除
-@app.route('/del/nature/<int:id>')
-def del_nature(id):
-    if 'manager_id' in session:
-        conn = sqlite3.connect('team3.db')
-        c = conn.cursor()
-        c.execute("DELETE FROM nature WHERE id = ?",(id,))
-        conn.commit()
-        conn.close()
-        return redirect("/list")
-    else:
-        return redirect("/login")
-
-
-
 # music削除
 @app.route('/del/music/<int:id>')
 def del_music(id):
@@ -930,9 +992,140 @@ def del_music(id):
         return redirect("/list")
     else:
         return redirect("/login")
-      
 
-#管理者登録（ちょっといまは勘弁してください・・・）
+@app.route('/del/art/<int:id>')
+def del_art(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM art WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/sports/<int:id>')
+def del_sports(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM sports WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/play/<int:id>')
+def del_play(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM play WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/life/<int:id>')
+def del_life(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM life WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/food/<int:id>')
+def del_food(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM food WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/trip/<int:id>')
+def del_trip(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM trip WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/nature/<int:id>')
+def del_nature(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM nature WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/fashion/<int:id>')
+def del_fashion(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM fashion WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/ride/<int:id>')
+def del_ride(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM ride WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/history/<int:id>')
+def del_history(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM history WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+
+@app.route('/del/medical/<int:id>')
+def del_medical(id):
+    if 'manager_id' in session:
+        conn = sqlite3.connect('team3.db')
+        c = conn.cursor()
+        c.execute("DELETE FROM medical WHERE id = ?",(id,))
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return redirect("/login")
+     
+#管理者登録
 @app.route('/regist')
 def regist_get():
     return render_template("regist.html")
@@ -949,6 +1142,7 @@ def regist_post():
     c.close()
     return redirect("/login")
 
+# login
 @app.route("/login")
 def login_get():
     if 'manager_id' in session:
