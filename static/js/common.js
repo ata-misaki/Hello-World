@@ -1,8 +1,11 @@
 $(function(){
-    $('.linkbtn').each(function(){
-        $(this).on('click',function(){
-            $("+.btn_item",this).slideToggle();
-            return false;
+   
+        $('.switch__circle').on('click',function changeCss(){
+            {
+                document.getElementById("cs").href = "../static/css/white_css/base.css";
+              }
         });
-    });
+   
+        
+
 });
