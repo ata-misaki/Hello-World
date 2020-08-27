@@ -41,7 +41,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     margin: 15px;
 }
 .content_item{
-    background: white;
+    background: rgb(192, 239, 248);
     margin: 150px 0 100px 0;
     list-style: none;
     border-radius: 20px;
@@ -50,7 +50,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     left: 25%;
 }
 .item a:hover {
-    background-color: rgb(255, 242, 191);
+    background-color: rgb(236, 253, 255);
     border-radius: 20px;
 }
 .item {
