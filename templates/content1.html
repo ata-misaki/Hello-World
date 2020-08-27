@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- ここから -->
+<link rel="stylesheet" href="../static/css/black_css/content1.css" media="screen and (min-width: 500px)">
+<link rel="stylesheet" href="../static/css/black_css/content1_sp.css" media="screen and (max-width: 501px)">
+<div class="container">
+    <div class="content_image">       
+        <p class="title">{{name}}<span>の世界</span></p>
+        <img class="image" src="../static/image/{{img}}/{{img}}.jpg" alt="">
+    </div>
+    <!-- <div class="text_container"> -->
+        <ul class="content_item">
+            <li class="item">
+                {% for item in contents_list %}  
+                <a href="/{{item['category']}}/{{item['id']}}">{{item["catchcopy"]}}</a>
+                {% endfor %}
+            </li> 
+        </ul>
+        <h3 class="top_return"><a href="/index" class="top_return_text">TOPにもどる</a></h3>
+    <!-- </div> -->
+</div> 
+
+<!-- ここまで -->
+{% endblock %}
