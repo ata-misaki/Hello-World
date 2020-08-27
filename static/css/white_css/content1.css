@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #010103;
+    background-color: white;
 }
 .content_image {
     width: 100%;
@@ -26,7 +26,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 
 .content_image .title{
     position: absolute;
-    color: white;
+    color: rgb(0, 0, 0);
     top: 15%;
     font-size: 80px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
@@ -35,7 +35,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     margin: 0%;
 }
 .content_image .title span {
-    color: white;
+    color: black;
     font-size: 50px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     margin: 15px;

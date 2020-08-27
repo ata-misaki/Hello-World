@@ -2,16 +2,16 @@
 {% block content %}
 <!-- ここから -->
 <!-- jquery.jsのパスを通す -->
-<script src="../static/js/jquery-3.5.1.js"></script>
+<!-- <script src="../static/js/jquery-3.5.1.js"></script>
 <script src="../static/js/jquery.fadethis.min.js"></script>
-<script src="../static/js/common.js"></script>
+<script src="../static/js/common.js"></script> -->
 <!-- cssのパス -->
-<link rel="stylesheet" href="static/css/black_css/top_black.css" media="screen and (min-width: 501px)">
+<link rel="stylesheet" href="static/css/black_css/top_black.css" media="screen and (min-width: 501px)" id="top_css">
     <link rel="stylesheet" href="static/css/black_css/top_sp_black.css" media="screen and (max-width: 500px)">
 
 <div class="container">
     <div class="top_image">       
-        <img class="image1" src="../static/image/top/earth.jpg" alt="">
+        <img class="image1" src="../static/image/top/earth.jpg" alt="" id="img">
         <p class="large">僕らの知らない世界</p>
         <p class="small">へようこそ</p>
     </div>
@@ -19,7 +19,7 @@
         <div class="genre">
             <p class="title">音楽<span>の世界</span></p>
             <img class="musicimage" src="../static/image/music/music.jpg" alt="">          
-            
+                
                 <a href="/music_con">世界をのぞく</a>      
             
          </div>
