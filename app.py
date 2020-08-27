@@ -653,7 +653,7 @@ def logout():
 
 @app.errorhandler(404)
 def not_found(code):
-    return "ページがないですよ"
+    return "ページがないです....ごめんね・・・・"
 
 
 if __name__ == "__main__":
