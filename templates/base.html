@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/black_css/base.css" media="screen and (min-width: 501px)">
+    <link rel="stylesheet" href="../static/css/black_css/base.css" media="screen and (min-width: 501px)" id="cs">
     <link rel="stylesheet" href="../static/css/black_css/base_sp.css" media="screen and (max-width: 500px)">
 
 
@@ -12,6 +12,14 @@
 <body>
     <header>
         <p>Hello World</p>
+<!-- ボタン -->
+        <div class="switch">
+                <label class="switch__label">
+                <input type="checkbox" class="switch__input"/>
+                <span class="switch__content"></span>
+                <span class="switch__circle"></span>
+                </label>
+        </div>
     </header>
     {% block content %}
 
