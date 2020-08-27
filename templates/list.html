@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- ここから -->
+<link rel="stylesheet" href="/static/css/black_css/listimg.css" >
 
 <!-- 自然 -->
 <p>nature</p>
@@ -13,7 +14,8 @@
         <td>{{nature_item["keyword1"]}}</td>
         <td>{{nature_item["keyword2"]}}</td>
         <td>{{nature_item["keyword3"]}}</td>
-        <td>{{nature_item["image"]}}</td>
+        <!-- <td>{{nature_item["image"]}}</td> -->
+        <td><img src="{{nature_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/nature/{{nature_item['id']}}">編集</a></td>
         <td><a href="/del/nature/{{nature_item['id']}}">削除</a></td>
     </tr>
@@ -31,7 +33,8 @@
         <td>{{play_item["keyword1"]}}</td>
         <td>{{play_item["keyword2"]}}</td>
         <td>{{play_item["keyword3"]}}</td>
-        <td>{{play_item["image"]}}</td>
+        <!-- <td>{{play_item["image"]}}</td> -->
+        <td><img src="{{play_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/play/{{play_item['id']}}">編集</a></td>
         <td><a href="/del/play/{{play_item['id']}}">削除</a></td>
     </tr>
@@ -49,7 +52,8 @@
         <td>{{music_item["keyword1"]}}</td>
         <td>{{music_item["keyword2"]}}</td>
         <td>{{music_item["keyword3"]}}</td>
-        <td>{{music_item["image"]}}</td>
+        <!-- <td>{{music_item["image"]}}</td> -->
+        <td><img src="{{music_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/music/{{music_item['id']}}">編集</a></td>
         <td><a href="/del/music/{{music_item['id']}}">削除</a></td>
     </tr>
@@ -67,7 +71,8 @@
         <td>{{art_item["keyword1"]}}</td>
         <td>{{art_item["keyword2"]}}</td>
         <td>{{art_item["keyword3"]}}</td>
-        <td>{{art_item["image"]}}</td>
+        <!-- <td>{{art_item["image"]}}</td> -->
+        <td><img src="{{art_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/art/{{art_item['id']}}">編集</a></td>
         <td><a href="/del/art/{{art_item['id']}}">削除</a></td>
     </tr>
@@ -85,7 +90,8 @@
         <td>{{sports_item["keyword1"]}}</td>
         <td>{{sports_item["keyword2"]}}</td>
         <td>{{sports_item["keyword3"]}}</td>
-        <td>{{sports_item["image"]}}</td>
+        <!-- <td>{{sports_item["image"]}}</td> -->
+        <td><img src="{{sports_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/sports/{{sports_item['id']}}">編集</a></td>
         <td><a href="/del/sports/{{sports_item['id']}}">削除</a></td>
     </tr>
@@ -104,7 +110,8 @@
         <td>{{trip_item["keyword1"]}}</td>
         <td>{{trip_item["keyword2"]}}</td>
         <td>{{trip_item["keyword3"]}}</td>
-        <td>{{trip_item["image"]}}</td>
+        <!-- <td>{{trip_item["image"]}}</td> -->
+        <td><img src="{{trip_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/trip/{{trip_item['id']}}">編集</a></td>
         <td><a href="/del/trip/{{trip_item['id']}}">削除</a></td>
     </tr>
@@ -123,7 +130,8 @@
         <td>{{fashion_item["keyword1"]}}</td>
         <td>{{fashion_item["keyword2"]}}</td>
         <td>{{fashion_item["keyword3"]}}</td>
-        <td>{{fashion_item["image"]}}</td>
+        <!-- <td>{{fashion_item["image"]}}</td> -->
+        <td><img src="{{fashion_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/fashion/{{fashion_item['id']}}">編集</a></td>
         <td><a href="/del/fashion/{{fashion_item['id']}}">削除</a></td>
     </tr>
@@ -143,7 +151,8 @@
         <td>{{food_item["keyword1"]}}</td>
         <td>{{food_item["keyword2"]}}</td>
         <td>{{food_item["keyword3"]}}</td>
-        <td>{{food_item["image"]}}</td>
+        <!-- <td>{{food_item["image"]}}</td> -->
+        <td><img src="{{food_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/food/{{food_item['id']}}">編集</a></td>
         <td><a href="/del/food/{{food_item['id']}}">削除</a></td>
     </tr>
@@ -163,7 +172,8 @@
         <td>{{life_item["keyword1"]}}</td>
         <td>{{life_item["keyword2"]}}</td>
         <td>{{life_item["keyword3"]}}</td>
-        <td>{{life_item["image"]}}</td>
+        <!-- <td>{{life_item["image"]}}</td> -->
+        <td><img src="{{life_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/life/{{life_item['id']}}">編集</a></td>
         <td><a href="/del/life/{{life_item['id']}}">削除</a></td>
     </tr>
@@ -182,7 +192,8 @@
         <td>{{medical_item["keyword1"]}}</td>
         <td>{{medical_item["keyword2"]}}</td>
         <td>{{medical_item["keyword3"]}}</td>
-        <td>{{medical_item["image"]}}</td>
+        <!-- <td>{{medical_item["image"]}}</td> -->
+        <td><img src="{{medical_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/medical/{{medical_item['id']}}">編集</a></td>
         <td><a href="/del/medical/{{medical_item['id']}}">削除</a></td>
     </tr>
@@ -201,7 +212,8 @@
         <td>{{history_item["keyword1"]}}</td>
         <td>{{history_item["keyword2"]}}</td>
         <td>{{history_item["keyword3"]}}</td>
-        <td>{{history_item["image"]}}</td>
+        <!-- <td>{{history_item["image"]}}</td> -->
+        <td><img src="{{history_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/history/{{history_item['id']}}">編集</a></td>
         <td><a href="/del/history/{{history_item['id']}}">削除</a></td>
     </tr>
@@ -220,7 +232,8 @@
         <td>{{ride_item["keyword1"]}}</td>
         <td>{{ride_item["keyword2"]}}</td>
         <td>{{ride_item["keyword3"]}}</td>
-        <td>{{ride_item["image"]}}</td>
+        <!-- <td>{{ride_item["image"]}}</td> -->
+        <td><img src="{{ride_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/ride/{{ride_item['id']}}">編集</a></td>
         <td><a href="/del/ride/{{ride_item['id']}}">削除</a></td>
     </tr>
