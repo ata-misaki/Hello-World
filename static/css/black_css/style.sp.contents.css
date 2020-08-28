@@ -6,11 +6,8 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 
 .contents_base{
     background-color: #010103;
-    /* display: flex;
-    justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
-    /* margin: 50px; */
     width: auto;
     height: auto;
 }
@@ -19,8 +16,6 @@ h1 {
     color: #fff;
     text-align: center;
     padding: 35px 35px 25px 25px;
-    /* display: flex;
-    justify-content: center; */
     margin-left: auto;
     margin-right: auto;
     font-size: 30px;
@@ -35,9 +30,6 @@ h1 {
 }
 .image {
     width: 40%;
-    /* vertical-align: middle; */
-    /* margin-top: auto;
-    margin-bottom: auto; */
     position: absolute;
     top: 15%;
     top: 50%;
@@ -55,13 +47,8 @@ h1 {
     width: auto;
     margin: 10px auto;
     text-align: left;
-    /* display: flex; */
-    /* position: relative; */
-    /* justify-content: center; */
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
-  /* // 中央寄せ */
     justify-content: center;
     align-items: center;
     height: 700px;
@@ -71,17 +58,6 @@ h1 {
 }
 
 
-
-
-/* .keyword {
-    text-align: left;
-    color: #fff; */
-    /* display: inline-table; */
-    /* display: inline-block;
-    vertical-align: middle; */
-    /* padding-left: 25px; */
-    /* height: 600px; */
-/* } */
 .keyword{
 
 }
@@ -97,8 +73,6 @@ h1 {
 
 ul, ol {
     background: #fcfcfc;/*背景色*/
-    /* padding: 0.5em 0.5em 0.5em 2em;ボックス内の余白 */
-    /* border: solid 3px gray;線の種類 太さ 色 */
     color: #010103;
     padding: 20px 40px;
     border-radius: 10px;
@@ -138,7 +112,6 @@ ul li, ol li {
 
 .fixed_base {
     text-align: center;
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,10 +120,7 @@ ul li, ol li {
 }
 .fixed_word {
     color: #61A6FF;
-    /* padding-top: 7%; */
     padding-bottom: 5%;
-    /* position: absolute;
-    bottom: 5px; */
     text-align: center;
     font-size: 14px;
 }
@@ -173,18 +143,6 @@ ul li, ol li {
     margin: 20px;
     margin-bottom: 10%;
    
-    /* margin-top: 2%;
-    margin-bottom: 2%; */
-    /* position: absolute; */
-    /* bottom: 2px; */
-    /* transform: translate(-50%, -50%); */
-    /* margin-right: auto;
-    /* margin-left: auto; */
-    /* left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);  */
-}
 
 .top_return:active {
     top: 2px;

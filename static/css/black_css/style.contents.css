@@ -11,7 +11,6 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     justify-content: center; 
     align-items: center;
     flex-wrap: wrap;
-    /* margin: 50px; */
     width: auto;
     height: auto;
 }
@@ -20,8 +19,6 @@ h1 {
     color: #fff;
     text-align: center;
     padding: 50px 50px 35px 35px;
-    /* display: flex;
-    justify-content: center; */
     margin-left: auto;
     margin-right: auto;
     font-size: 40px;
@@ -34,7 +31,6 @@ h1 {
 .image {
     width: 50%;
     text-align: center;
-    /* height: 40%; */
     vertical-align: middle;
     margin-top: auto;
     margin-bottom: auto;
@@ -56,7 +52,6 @@ h1 {
     display: flex;
     position: relative;
     justify-content: center;
-    /* vertical-align: middle; */
 }
 
 .keyword_base{
@@ -68,7 +63,6 @@ h1 {
 .keyword {
     text-align: left;
     color: #fff;
-    /* display: inline-table; */
     display: inline-block;
     vertical-align: middle;
     padding-left: 45px;
@@ -78,7 +72,6 @@ h1 {
 ul, ol {
     background: #fcfcfc;/*背景色*/
     padding: 0.5em 0.5em 0.5em 2em;/*ボックス内の余白*/
-    /* border: solid 3px gray;線の種類 太さ 色 */
     color: #010103;
     border-radius: 10px;
   }
@@ -109,7 +102,6 @@ ul li, ol li {
 }
 .fixed_base {
     text-align: center;
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,8 +112,6 @@ ul li, ol li {
     color: #61A6FF;
     padding-top: 7%;
     padding-bottom: 5%;
-    /* position: absolute;
-    bottom: 5px; */
     text-align: center;
     font-size: 35px;
 }
@@ -143,18 +133,6 @@ ul li, ol li {
     justify-content: center;
     margin: 20px;
     margin-bottom: 7%;
-    /* margin-top: 2%;
-    margin-bottom: 2%; */
-    /* position: absolute; */
-    /* bottom: 2px; */
-    /* transform: translate(-50%, -50%); */
-    /* margin-right: auto;
-    /* margin-left: auto; */
-    /* top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%); */ 
 }
 
 .top_return:active {
@@ -168,12 +146,6 @@ ul li, ol li {
 }
 
 
-/* .empty {
-    background-color: #010103;
-    margin: 0;
-    width: auto;
-    height: 25px;
-} */
 
 h3 {
     text-align: center;
