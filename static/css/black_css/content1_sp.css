@@ -50,7 +50,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     left: 25%;
     margin: 0 0 80px 0;
 }
-.item a:hover {
+.item a:{
     background-color: rgb(255, 242, 191);
     border-radius: 20px;
 }
@@ -64,4 +64,34 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     color: black;
     padding: 10px;
+    margin: 20px 0px;
+    background-color: rgb(255, 242, 191);
+    border-radius: 20px;
   }
+  .top_return{
+    width: 250px;
+      height: 50px;
+      line-height: 50px;
+      background-color: #A61010;
+      box-shadow: 0 5px 0 #FEACAC;
+      font-family: A-OTF 太ゴB101 Pr6N;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 20px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 20px;
+      margin-bottom: 7%;
+      
+      }
+      .top_return_text {
+          color: #fff;
+          text-decoration: none;
+      }
+      h3:hover{
+          width: 255px;
+          height: 53px;
+      }

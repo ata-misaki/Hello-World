@@ -36,7 +36,6 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     transform: translate(-50%,-50%);
 }
 .image1 {
-    margin: 100px 0 0 0;
     width: 100%;
     object-fit: cover;
 }
