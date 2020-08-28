@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #010103;
+    background-color: white;
 }
 .content_image {
     width: 100%;
@@ -26,7 +26,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 
 .content_image .title{
     position: absolute;
-    color: white;
+    color: black;
     top: 15%;
     font-size: 40px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
@@ -35,13 +35,18 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     margin: 0%;
 }
 .content_image .title span {
-    color: white;
+    color: black;
     font-size: 30px;
-    /* font-family: A-OTF 太ゴB101 Pr6N; */
-   
+    /* font-family: A-OTF 太ゴB101 Pr6N; */ 
+}
+.item_txt{
+    color: brown;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
 }
 .content_item{
-    background: white;
+    background: rgb(192, 239, 248);
     margin: 30px 0 40px 0;
     list-style: none;
     border-radius: 20px;
@@ -50,10 +55,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     left: 25%;
     margin: 0 0 80px 0;
 }
-.item a:hover {
-    background-color: rgb(255, 242, 191);
-    border-radius: 20px;
-}
+
 .item {
     padding: 10px 20px;
 }
@@ -64,4 +66,34 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     color: black;
     padding: 10px;
+    margin: 20px 0px;
+    background-color: rgb(236, 253, 255);
+    border-radius: 20px;
   }
+  .top_return {
+    width: 180px;
+    height: 35px;
+    line-height: 40px;
+    background-color: #A61010;
+    box-shadow: 0 3px 0 #FEACAC;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    margin-bottom: 10%;
+    }
+    .top_return:active {
+        top: 2px;
+          box-shadow: 0 2px 0 #FEACAC;
+    }
+.top_return_text {
+    color: #fff;
+    text-decoration: none;
+}
+     

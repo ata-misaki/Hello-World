@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #010103;
+    background-color: white;
 }
 .content_image {
     width: 100%;
@@ -26,7 +26,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 
 .content_image .title{
     position: absolute;
-    color: white;
+    color: rgb(0, 0, 0);
     top: 15%;
     font-size: 80px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
@@ -35,13 +35,13 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     margin: 0%;
 }
 .content_image .title span {
-    color: white;
+    color: black;
     font-size: 50px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     margin: 15px;
 }
 .content_item{
-    background: white;
+    background: rgb(192, 239, 248);
     margin: 150px 0 100px 0;
     list-style: none;
     border-radius: 20px;
@@ -49,8 +49,14 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     text-align: center;
     left: 25%;
 }
+.item_txt{
+    color: brown;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
 .item a:hover {
-    background-color: rgb(255, 242, 191);
+    background-color: rgb(236, 253, 255);
     border-radius: 20px;
 }
 .item {

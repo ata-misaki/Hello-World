@@ -5,13 +5,12 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     padding: 0px;
 }
 
+
+
 /* index */
 /* topimage */
-p a span {
-    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",  sans-serif;
-}
 .container {
-    background-color: #010103;
+    background-color: white;
 }
 .top_image{
     position: relative;
@@ -19,22 +18,22 @@ p a span {
 .top_image .large {
     position: absolute;
     color: white;
-    top: 15%;
-    font-size: 70px;
-    
     width: 100%;
     text-align: center;
-    margin: 0%;
+    top: 10%;
+    left: 50%;
+    font-size: 30px;
+    /* font-family: A-OTF 太ゴB101 Pr6N; */
+    transform: translate(-50%,-50%);
 }
 .top_image .small {
     position: absolute;
     color: white;
-    top: 35%;
+    top: 30%;
     left: 50%;
-    font-size: 60px;
+    font-size: 30px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     transform: translate(-50%,-50%);
-    margin: 0px;
 }
 .image1 {
     width: 100%;
@@ -43,28 +42,31 @@ p a span {
 /* ジャンル */
 .genre_container{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 40px;
+    margin: 50px;
 }
 .genre {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 28%;
+    width: 100%;
     position: relative;
 } 
 .genre .title {
-    color: white;
-    font-size: 45px;
+    color: black;
+    font-size: 30px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
-    margin: 0px;
+    
 }
 .genre .title span{
-    color: white;
-    font-size: 30px;
+    color: black;
+    font-size: 20px;
     /* font-family: A-OTF 太ゴB101 Pr6N; */
     margin: 5px;
 }
@@ -90,8 +92,18 @@ a {
 a:active {
     top: 2px;
       box-shadow: 0 2px 0 #FEACAC;
-}  
-a:hover{
-    width: 210px;
-    height: 55px;
 }
+
+
+
+.item a {
+    /* border-bottom: 1px solid gray; */
+    display: block;
+    text-decoration: none;
+    font-family: A-OTF 太ゴB101 Pr6N;
+    color: black;
+  }
+.space {
+    height: 100px;
+}
+
