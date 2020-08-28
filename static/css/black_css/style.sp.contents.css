@@ -58,9 +58,7 @@ h1 {
 }
 
 
-.keyword{
 
-}
 .keyword_block{
     display: flex;
     flex-direction: column;
@@ -142,7 +140,7 @@ ul li, ol li {
     justify-content: center;
     margin: 20px;
     margin-bottom: 10%;
-   
+}
 
 .top_return:active {
     top: 2px;

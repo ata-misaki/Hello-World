@@ -1,0 +1,13 @@
+table{
+    table-layout: fixed;
+  }
+Table tr td:nth-child(6) {
+    width:300px;
+}
+
+
+.listimage{
+  width: 40%;
+  /* length: 40%; */
+}
+
