@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    
+    <!-- 入力フォーム -->
+    <form action="/login" method="post">
+         <a>ID：</a><input type="text" name = "manager_id" placeholder="id入力">
+         <a>パスワード：</a><input type="password" name = "password" placeholder="password">
+         <input type="submit" name = "save" value = "ログイン">
+    </form>
+    
+<footer>
+    
+</footer>
+    
+{% endblock %}
+    

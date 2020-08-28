@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- ここから -->
+
+
+<p>Life add</p>
+<form action="/add/life" method="post">
+    <p>キャッチコピー</p>
+    <input type="text" maxlength="100" name = "catchcopy">
+    <p>名前</p>
+    <input type="text" maxlength="100" name = "name">
+    <p>キーワード1</p>
+    <input type="text" maxlength="100" name = "keyword1">   
+    <p>キーワード2</p>
+    <input type="text" maxlength="100" name = "keyword2">
+    <p>キーワード3</p>
+    <input type="text" maxlength="100" name = "keyword3">
+    
+    <p>画像</p>
+    <input type="text" name="image"> 
+    <br>
+    <br>
+    <input type="submit" name="save" value="追加">
+</form>
+
+<!-- ここまで -->
+{% endblock %}

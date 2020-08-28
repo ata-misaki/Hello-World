@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ここから -->
+<form action="/edit/{{category}}" method="post">
+    <input type="hidden" value="{{id}}" name="id">
+    <input type="text" value="{{catchcopy}}" name="catchcopy">
+    <input type="text" value="{{name}}" name="name">
+    <input type="text" value="{{keyword1}}" name="keyword1">
+    <input type="text" value="{{keyword2}}" name="keyword2">
+    <input type="text" value="{{keyword3}}" name="keyword3">
+    <input type="blob" value="{{image}}" name="image">
+    <input type="submit" value="編集">
+    
+</form>
+<!-- ここまで -->
+{% endblock %}
