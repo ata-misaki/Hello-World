@@ -15,7 +15,7 @@ header {
 }
 header p {
     font-size: 60px;
-    font-family: Malgun Gothic;
+    font-family: 'Russo One', sans-serif;
     font-weight: bold;
     height: 80px;
     margin: 0px;
@@ -33,8 +33,8 @@ header p {
 
 .btn_black {
     width: 50px;
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
     background-color: #000000;
     box-shadow: 0 5px 0 #656666;
     display: inline-block;
@@ -44,7 +44,7 @@ header p {
     text-align: center;
     text-decoration: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor : pointer;
     
 }
@@ -54,13 +54,13 @@ header p {
 }
 .btn_black:hover {
 width: 51px;
-height: 31px;
+height: 51px;
 }
 
 .btn_white {
     width: 50px;
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
     background-color: #ffffff;
     box-shadow: 0 5px 0 #656666;
     display: inline-block;
@@ -70,7 +70,7 @@ height: 31px;
     text-align: center;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    border-radius: 5px;
+    border-radius: 25px;
     cursor : pointer;
        
 }
@@ -80,7 +80,7 @@ height: 31px;
 }
 .btn_white:hover {
 width: 51px;
-height: 31px;
+height: 51px;
 }    
 /* basex.htmlここまで */
 
@@ -104,16 +104,16 @@ footer p {
     padding: 75px; */
 }
 .twitter {
-    width: 400px;
-    height: 100px;
-    line-height: 100px;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
     background-color: #008DDE;
-    box-shadow: 0 10px 0 #224760;
+    box-shadow: 0 5px 0 #224760;
     
     display: inline-block;
     /* position: relative; */
     font-family: Arial;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -126,6 +126,6 @@ footer p {
       box-shadow: 0 2px 0 #0078BD;
   }
   .twitter:hover {
-    width: 430px;
-    height: 110px;
+    width: 255px;
+    height: 53px;
     /* base.htmlここまで */

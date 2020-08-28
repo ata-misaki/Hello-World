@@ -82,9 +82,7 @@ h1 {
     /* padding-left: 25px; */
     /* height: 600px; */
 /* } */
-.keyword{
 
-}
 .keyword_block{
     display: flex;
     flex-direction: column;
@@ -96,7 +94,7 @@ h1 {
 }
 
 ul, ol {
-    background: rgb(192, 239, 248);/*背景色*/
+    background: rgb(236, 253, 255);/*背景色*/
     /* padding: 0.5em 0.5em 0.5em 2em;ボックス内の余白 */
     /* border: solid 3px gray;線の種類 太さ 色 */
     color: #010103;
@@ -113,8 +111,7 @@ ul li, ol li {
 
 
 .name_space {
-    background:  rgb(236, 253, 255) 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
+    background:  rgb(236, 253, 255) ;
     border-radius: 17px;
     opacity: 1;
     color: #010103;

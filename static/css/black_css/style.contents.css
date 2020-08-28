@@ -72,6 +72,7 @@ h1 {
     display: inline-block;
     vertical-align: middle;
     padding-left: 45px;
+    width: 30%;
 }
 
 ul, ol {
@@ -165,7 +166,7 @@ ul li, ol li {
     color: #fff;
     text-decoration: none;
 }
-}
+
 
 /* .empty {
     background-color: #010103;

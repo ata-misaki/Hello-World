@@ -1,110 +1,9 @@
 /* リセット */
-/* body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
+body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     margin: 0px;
     padding: 0px;
-} */
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
 }
 
-body {
-    line-height:1;
-}
-
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
-}
-
-nav ul {
-    list-style:none;
-}
-
-blockquote, q {
-    quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
-}
-
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-}
-
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
-}
-
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
-}
-
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
-/* change border colour to suit your needs */
-hr {
-    display:block;
-    height:1px;
-    border:0;  
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
-}
-
-input, select {
-    vertical-align:middle;
-}
     
 
 /* base.htmlここから */
@@ -117,7 +16,7 @@ header {
 }
 header p {
     font-size: 60px;
-    font-family: Malgun Gothic;
+    font-family: 'Russo One', sans-serif;
     font-weight: bold;
     height: 80px;
     margin: 0px;
@@ -135,8 +34,8 @@ header p {
 
 .btn_black {
     width: 50px;
-    height: 30px;
-    line-height: 30px;
+    height:50px;
+    line-height: 50px;
     background-color: #000000;
     box-shadow: 0 5px 0 #656666;
     display: inline-block;
@@ -146,7 +45,7 @@ header p {
     text-align: center;
     text-decoration: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor : pointer;
        
 }
@@ -156,14 +55,14 @@ header p {
 }
 .btn_black:hover {
 width: 51px;
-height: 31px;
+height: 51px;
 }
 
 
 .btn_white {
     width: 50px;
-    height: 30px;
-    line-height: 30px;
+    height:50px;
+    line-height: 50px;
     background-color: #ffffff;
     box-shadow: 0 5px 0 #656666;
     display: inline-block;
@@ -173,7 +72,7 @@ height: 31px;
     text-align: center;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    border-radius: 5px;
+    border-radius: 25px;
     cursor : pointer;
        
 }
@@ -183,7 +82,7 @@ height: 31px;
 }
 .btn_white:hover {
 width: 51px;
-height: 31px;
+height: 51px;
 } 
 /* basex.htmlここまで */
 
@@ -207,16 +106,16 @@ footer p {
     padding: 75px; */
 }
 .twitter {
-    width: 400px;
-    height: 100px;
-    line-height: 100px;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
     background-color: #008DDE;
-    box-shadow: 0 10px 0 #224760;
+    box-shadow: 0 5px 0 #224760;
     
     display: inline-block;
     /* position: relative; */
     font-family: Arial;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -229,7 +128,7 @@ footer p {
       box-shadow: 0 2px 0 #0078BD;
   }
   .twitter:hover {
-    width: 430px;
-    height: 110px;
+    width: 255px;
+    height: 53px;
   }
     /* base.htmlここまで */

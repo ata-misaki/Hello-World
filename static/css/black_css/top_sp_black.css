@@ -38,6 +38,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
 .image1 {
     width: 100%;
     object-fit: cover;
+    margin-top: 30px;
 }
 /* ジャンル */
 .genre_container{
@@ -48,7 +49,7 @@ body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin: 50px;
+    margin: 20px 50px 50px 50px;
 }
 .genre {
     display: flex;
