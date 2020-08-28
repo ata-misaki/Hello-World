@@ -623,10 +623,6 @@ def trippage(id):
 # テーブルtrip
 
 
-<<<<<<< HEAD
-
-
-=======
 # login
 @app.route("/login")
 def login_get():
@@ -660,7 +656,6 @@ def logout():
 @app.errorhandler(404)
 def not_found(code):
     return "ページがないです....ごめんね・・・・"
->>>>>>> test
 
 
 if __name__ == "__main__":
