@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <title>Document</title> 
+    <link rel="stylesheet" href="../static/css/black_css/base.css" media="screen and (min-width: 501px)" id="cs">
+    <link rel="stylesheet" href="../static/css/black_css/base_sp.css" media="screen and (max-width: 500px)" id="sp_cs">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    
+    
+
+    <title>Hello World</title> 
 </head>
 <body>
-    <!-- <p style="background-color: antiquewhite;">ヘッダー</p> -->
-    <p>ヘッダー!!!!</p>
+
+    <header>
+        <p>Hello World</p>
+<!-- ボタン -->
+        <div class="btn">
+           
+            <div class="btn_white">
+            <span class="btn-change">light</span> 
+            </div> 
+            <div class="btn_black">
+            <span class="btn-change">dark</span>
+            </div>
+        </div>
+        
+    </header>
+
     {% block content %}
 
 
@@ -16,7 +35,18 @@
 
 
     {% endblock %}
-    <!-- <p style="background-color: darkseagreen;">フッター</p> -->
-    <p> フッター</p>
+    <footer>
+        
+        <p>質問やお問い合わせは公式ツイッターまで！！</p>
+        <a href="https://twitter.com/H30298393" class="twitter">Twitterフォローしてね！</a>   
+        
+    </footer>
+ 
 </body>
+   <!-- jquery.jsのパスを通す -->
+   <script src="../static/js/jquery-3.5.1.js"></script>
+   <script src="../static/js/jquery.fadethis.min.js"></script>
+   <script src="../static/js/common.js"></script>
+  
+
 </html>

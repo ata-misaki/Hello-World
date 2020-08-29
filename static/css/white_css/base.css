@@ -1,0 +1,130 @@
+/* リセット */
+body, h1, h2, h3, h4, h5, ul, ol, li, dl, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* base.htmlここから */
+header {
+    width: auto;
+    height: 140px;
+    background-color: #FFEBB3;
+    position: relative;
+    
+}
+header p {
+    font-size: 60px;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+    height: 80px;
+    margin: 0px;
+    padding: 30px;
+    display: inline-block;
+}
+
+/*** ボタン ***/
+.btn {
+    position: absolute;
+    top: 45px;
+    right: 5%;
+    height: 40px;
+}
+
+.btn_black {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #000000;
+    box-shadow: 0 5px 0 #656666;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    cursor : pointer;
+    
+}
+.btn_black:active {
+    top: 2px;
+    box-shadow: 0 2px 0 #656666;
+}
+.btn_black:hover {
+width: 51px;
+height: 51px;
+}
+
+.btn_white {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 0 #656666;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    cursor : pointer;
+       
+}
+.btn_white:active {
+    top: 2px;
+    box-shadow: 0 2px 0 #656666;
+}
+.btn_white:hover {
+width: 51px;
+height: 51px;
+}    
+/* basex.htmlここまで */
+
+/* base.htmlここから */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 200px;
+    background-color: #FFEBB3;   
+}
+
+footer p {
+    display: inline-block;
+    font-size: 30px;
+    /* font-family: A-OTF 太ゴB101 Pr6N; */
+    font-weight: bold;
+    height: 60px;
+    /* margin: 0px;
+    padding: 75px; */
+}
+.twitter {
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #008DDE;
+    box-shadow: 0 5px 0 #224760;
+    
+    display: inline-block;
+    /* position: relative; */
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    /* padding: 14px 80px; */
+  }
+  .twitter:active {
+    top: 2px;
+      box-shadow: 0 2px 0 #0078BD;
+  }
+  .twitter:hover {
+    width: 255px;
+    height: 53px;
+    /* base.htmlここまで */
