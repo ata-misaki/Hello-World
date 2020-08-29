@@ -25,7 +25,7 @@ app.secret_key = 'sunabaco_yatsusiro'
 # インデックスページ
 
 
-@app.route("/index")
+@app.route("/")
 def indexpage():
     return render_template("index.html")
 
