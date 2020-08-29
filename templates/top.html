@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- ここから -->
+
+  {% for item in foods_list %}
+    <p>{{item["id"]}}</p>
+    <p>{{item["catchcopy"]}}</p>
+    <a href="/foods/{{item['id']}}">{{item["catchcopy"]}}</a>
+
+
+  {% endfor %}
+
+
+
+  {% for item in art_list %}
+    <p>{{item["id"]}}</p>
+    <p>{{item["catchcopy"]}}</p>
+    <a href="/art/{{item['id']}}">{{item["catchcopy"]}}</a>
+
+
+  {% endfor %}
+
+</table>
+
+<!-- ここまで -->
+{% endblock %}
