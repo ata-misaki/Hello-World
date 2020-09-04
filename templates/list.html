@@ -15,8 +15,8 @@
         <td>{{music_item["keyword2"]}}</td>
         <td>{{music_item["keyword3"]}}</td>
         <td><img src="{{music_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/music/{{music_item['id']}}">編集</a></td>
-        <td><a href="/del/music/{{music_item['id']}}">削除</a></td>
+        <td class="edit"><a href="/edit/music/{{music_item['id']}}">編集</a></td>
+        <td class="del"><a href="/del/music/{{music_item['id']}}">削除</a></td>
     </tr>
     {% endfor %}
 </table>
