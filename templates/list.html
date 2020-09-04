@@ -4,44 +4,6 @@
 <!-- ここから -->
 <link rel="stylesheet" href="/static/css/black_css/listimg.css" >
 
-<!-- 自然 -->
-<p>nature</p>
-<table border="1">
-    {% for nature_item in nature_list %}   
-    <tr>      
-        <td>{{nature_item["catchcopy"]}}</td>
-        <td>{{nature_item["name"]}}</td>
-        <td>{{nature_item["keyword1"]}}</td>
-        <td>{{nature_item["keyword2"]}}</td>
-        <td>{{nature_item["keyword3"]}}</td>
-        <!-- <td>{{nature_item["image"]}}</td> -->
-        <td><img src="{{nature_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/nature/{{nature_item['id']}}">編集</a></td>
-        <td><a href="/del/nature/{{nature_item['id']}}">削除</a></td>
-    </tr>
-    {% endfor %}
-</table>
-<a href="/add/nature">追加</a>
-
-<!-- 娯楽 -->
-<p>play</p>
-<table border = "1">
-    {% for play_item in play_list %}   
-    <tr>      
-        <td>{{play_item["catchcopy"]}}</td>
-        <td>{{play_item["name"]}}</td>
-        <td>{{play_item["keyword1"]}}</td>
-        <td>{{play_item["keyword2"]}}</td>
-        <td>{{play_item["keyword3"]}}</td>
-        <!-- <td>{{play_item["image"]}}</td> -->
-        <td><img src="{{play_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/play/{{play_item['id']}}">編集</a></td>
-        <td><a href="/del/play/{{play_item['id']}}">削除</a></td>
-    </tr>
-    {% endfor %}
-</table>
-<a href="/add/play">追加</a>
-
 <!-- 音楽-->
 <p>music</p>
 <table border = "1">
@@ -52,7 +14,6 @@
         <td>{{music_item["keyword1"]}}</td>
         <td>{{music_item["keyword2"]}}</td>
         <td>{{music_item["keyword3"]}}</td>
-        <!-- <td>{{music_item["image"]}}</td> -->
         <td><img src="{{music_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/music/{{music_item['id']}}">編集</a></td>
         <td><a href="/del/music/{{music_item['id']}}">削除</a></td>
@@ -71,7 +32,6 @@
         <td>{{art_item["keyword1"]}}</td>
         <td>{{art_item["keyword2"]}}</td>
         <td>{{art_item["keyword3"]}}</td>
-        <!-- <td>{{art_item["image"]}}</td> -->
         <td><img src="{{art_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/art/{{art_item['id']}}">編集</a></td>
         <td><a href="/del/art/{{art_item['id']}}">削除</a></td>
@@ -90,7 +50,6 @@
         <td>{{sports_item["keyword1"]}}</td>
         <td>{{sports_item["keyword2"]}}</td>
         <td>{{sports_item["keyword3"]}}</td>
-        <!-- <td>{{sports_item["image"]}}</td> -->
         <td><img src="{{sports_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/sports/{{sports_item['id']}}">編集</a></td>
         <td><a href="/del/sports/{{sports_item['id']}}">削除</a></td>
@@ -98,6 +57,60 @@
     {% endfor %}
 </table>
 <a href="/add/sports">追加</a>
+
+<!-- 娯楽 -->
+<p>play</p>
+<table border = "1">
+    {% for play_item in play_list %}   
+    <tr>      
+        <td>{{play_item["catchcopy"]}}</td>
+        <td>{{play_item["name"]}}</td>
+        <td>{{play_item["keyword1"]}}</td>
+        <td>{{play_item["keyword2"]}}</td>
+        <td>{{play_item["keyword3"]}}</td>
+        <td><img src="{{play_item['image']}}" alt="イメージ画像" class="listimage"></td>
+        <td><a href="/edit/play/{{play_item['id']}}">編集</a></td>
+        <td><a href="/del/play/{{play_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add/play">追加</a>
+
+<!-- life -->
+<p>life</p>
+<table border = "1">
+    {% for life_item in life_list %}   
+    <tr>      
+        <td>{{life_item["catchcopy"]}}</td>   
+        <td>{{life_item["name"]}}</td>
+        <td>{{life_item["keyword1"]}}</td>
+        <td>{{life_item["keyword2"]}}</td>
+        <td>{{life_item["keyword3"]}}</td>
+        <td><img src="{{life_item['image']}}" alt="イメージ画像" class="listimage"></td>
+        <td><a href="/edit/life/{{life_item['id']}}">編集</a></td>
+        <td><a href="/del/life/{{life_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add/life">追加</a>
+
+<!-- food -->
+<p>food</p>
+<table border = "1">
+    {% for food_item in food_list %}   
+    <tr>      
+        <td>{{food_item["catchcopy"]}}</td>   
+        <td>{{food_item["name"]}}</td>
+        <td>{{food_item["keyword1"]}}</td>
+        <td>{{food_item["keyword2"]}}</td>
+        <td>{{food_item["keyword3"]}}</td>
+        <td><img src="{{food_item['image']}}" alt="イメージ画像" class="listimage"></td>
+        <td><a href="/edit/food/{{food_item['id']}}">編集</a></td>
+        <td><a href="/del/food/{{food_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table> 
+<a href="/add/food">追加</a>
 
 
 <!-- 旅 -->
@@ -110,7 +123,6 @@
         <td>{{trip_item["keyword1"]}}</td>
         <td>{{trip_item["keyword2"]}}</td>
         <td>{{trip_item["keyword3"]}}</td>
-        <!-- <td>{{trip_item["image"]}}</td> -->
         <td><img src="{{trip_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/trip/{{trip_item['id']}}">編集</a></td>
         <td><a href="/del/trip/{{trip_item['id']}}">削除</a></td>
@@ -119,6 +131,23 @@
 </table>
 <a href="/add/trip">追加</a>
 
+<!-- 自然 -->
+<p>nature</p>
+<table border="1">
+    {% for nature_item in nature_list %}   
+    <tr>      
+        <td>{{nature_item["catchcopy"]}}</td>
+        <td>{{nature_item["name"]}}</td>
+        <td>{{nature_item["keyword1"]}}</td>
+        <td>{{nature_item["keyword2"]}}</td>
+        <td>{{nature_item["keyword3"]}}</td>
+        <td><img src="{{nature_item['image']}}" alt="イメージ画像" class="listimage"></td>
+        <td><a href="/edit/nature/{{nature_item['id']}}">編集</a></td>
+        <td><a href="/del/nature/{{nature_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add/nature">追加</a>
 
 <!-- fashion -->
 <p>fashion</p>
@@ -130,7 +159,6 @@
         <td>{{fashion_item["keyword1"]}}</td>
         <td>{{fashion_item["keyword2"]}}</td>
         <td>{{fashion_item["keyword3"]}}</td>
-        <!-- <td>{{fashion_item["image"]}}</td> -->
         <td><img src="{{fashion_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/fashion/{{fashion_item['id']}}">編集</a></td>
         <td><a href="/del/fashion/{{fashion_item['id']}}">削除</a></td>
@@ -138,89 +166,6 @@
     {% endfor %}
 </table>
 <a href="/add/fashion">追加</a>
-
-
-
-<!-- food -->
-<p>food</p>
-<table border = "1">
-    {% for food_item in food_list %}   
-    <tr>      
-        <td>{{food_item["catchcopy"]}}</td>   
-        <td>{{food_item["name"]}}</td>
-        <td>{{food_item["keyword1"]}}</td>
-        <td>{{food_item["keyword2"]}}</td>
-        <td>{{food_item["keyword3"]}}</td>
-        <!-- <td>{{food_item["image"]}}</td> -->
-        <td><img src="{{food_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/food/{{food_item['id']}}">編集</a></td>
-        <td><a href="/del/food/{{food_item['id']}}">削除</a></td>
-    </tr>
-    {% endfor %}
-</table> 
-<a href="/add/food">追加</a>
-
-
-
-<!-- life -->
-<p>life</p>
-<table border = "1">
-    {% for life_item in life_list %}   
-    <tr>      
-        <td>{{life_item["catchcopy"]}}</td>   
-        <td>{{life_item["name"]}}</td>
-        <td>{{life_item["keyword1"]}}</td>
-        <td>{{life_item["keyword2"]}}</td>
-        <td>{{life_item["keyword3"]}}</td>
-        <!-- <td>{{life_item["image"]}}</td> -->
-        <td><img src="{{life_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/life/{{life_item['id']}}">編集</a></td>
-        <td><a href="/del/life/{{life_item['id']}}">削除</a></td>
-    </tr>
-    {% endfor %}
-</table>
-<a href="/add/life">追加</a>
-
-
-<!-- medical -->
-<p>medical</p>
-<table border = "1">
-    {% for medical_item in medical_list %}   
-    <tr>      
-        <td>{{medical_item["catchcopy"]}}</td>   
-        <td>{{medical_item["name"]}}</td>
-        <td>{{medical_item["keyword1"]}}</td>
-        <td>{{medical_item["keyword2"]}}</td>
-        <td>{{medical_item["keyword3"]}}</td>
-        <!-- <td>{{medical_item["image"]}}</td> -->
-        <td><img src="{{medical_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/medical/{{medical_item['id']}}">編集</a></td>
-        <td><a href="/del/medical/{{medical_item['id']}}">削除</a></td>
-    </tr>
-    {% endfor %}
-</table>
-<a href="/add/medical">追加</a>
-
-
-<!-- history -->
-<p>history</p>
-<table border = "1">
-    {% for history_item in history_list %}   
-    <tr>      
-        <td>{{history_item["catchcopy"]}}</td>   
-        <td>{{history_item["name"]}}</td>
-        <td>{{history_item["keyword1"]}}</td>
-        <td>{{history_item["keyword2"]}}</td>
-        <td>{{history_item["keyword3"]}}</td>
-        <!-- <td>{{history_item["image"]}}</td> -->
-        <td><img src="{{history_item['image']}}" alt="イメージ画像" class="listimage"></td>
-        <td><a href="/edit/history/{{history_item['id']}}">編集</a></td>
-        <td><a href="/del/history/{{history_item['id']}}">削除</a></td>
-    </tr>
-    {% endfor %}
-</table>
-<a href="/add/history">追加</a>
-
 
 <!-- ride -->
 <p>ride</p>
@@ -232,7 +177,6 @@
         <td>{{ride_item["keyword1"]}}</td>
         <td>{{ride_item["keyword2"]}}</td>
         <td>{{ride_item["keyword3"]}}</td>
-        <!-- <td>{{ride_item["image"]}}</td> -->
         <td><img src="{{ride_item['image']}}" alt="イメージ画像" class="listimage"></td>
         <td><a href="/edit/ride/{{ride_item['id']}}">編集</a></td>
         <td><a href="/del/ride/{{ride_item['id']}}">削除</a></td>
@@ -240,6 +184,42 @@
     {% endfor %}
 </table>
 <a href="/add/ride">追加</a>
+
+<!-- history -->
+<p>history</p>
+<table border = "1">
+    {% for history_item in history_list %}   
+    <tr>      
+        <td>{{history_item["catchcopy"]}}</td>   
+        <td>{{history_item["name"]}}</td>
+        <td>{{history_item["keyword1"]}}</td>
+        <td>{{history_item["keyword2"]}}</td>
+        <td>{{history_item["keyword3"]}}</td>
+        <td><img src="{{history_item['image']}}" alt="イメージ画像" class="listimage"></td>
+        <td><a href="/edit/history/{{history_item['id']}}">編集</a></td>
+        <td><a href="/del/history/{{history_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add/history">追加</a>
+
+<!-- medical -->
+<p>medical</p>
+<table border = "1">
+    {% for medical_item in medical_list %}   
+    <tr>      
+        <td>{{medical_item["catchcopy"]}}</td>   
+        <td>{{medical_item["name"]}}</td>
+        <td>{{medical_item["keyword1"]}}</td>
+        <td>{{medical_item["keyword2"]}}</td>
+        <td>{{medical_item["keyword3"]}}</td>
+        <td><img src="{{medical_item['image']}}" alt="イメージ画像" class="listimage"></td>
+        <td><a href="/edit/medical/{{medical_item['id']}}">編集</a></td>
+        <td><a href="/del/medical/{{medical_item['id']}}">削除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add/medical">追加</a>
 <br>
 <br>
 <a href="/logout">ログアウト</a>
